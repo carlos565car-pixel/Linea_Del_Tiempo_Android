@@ -153,4 +153,18 @@ h1 {
     text-align: right;
     font-size: 0.8rem;
 }
+#timeline-content {
+    display: flex;          /* PONE LOS ITEMS EN FILA */
+    flex-direction: row;    /* HORIZONTAL */
+    align-items: center;
+}
+.timeline-track {
+    white-space: nowrap;
+}
+.timeline-item:nth-child(even) {
+    transform: translateY(-120px);
+}
+.timeline-item:nth-child(odd) {
+    transform: translateY(120px);
+}
 
