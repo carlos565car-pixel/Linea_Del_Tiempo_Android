@@ -1,4 +1,4 @@
-}:root {
+:root {
     --android-green: #3ddc84;
     --dark-bg: #06080a;
     --card-bg: #161b22;
@@ -7,7 +7,6 @@
 
 body {
     background-color: var(--dark-bg);
-    /* FONDO MEJORADO: Cuadrícula retro-tech */
     background-image: 
         linear-gradient(rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px),
         linear-gradient(90deg, rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px);
@@ -18,7 +17,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Evita que la página suba y baje */
 }
 
 .header {
@@ -27,44 +26,53 @@ body {
     z-index: 10;
 }
 
-h1 { 
-    color: var(--android-green); 
-    font-size: 1.8rem; 
-    text-shadow: 4px 4px #000;
-}
+h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; }
 
 /* CONTENEDOR DEL SCROLL */
 .timeline-wrapper {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .timeline-container {
     width: 100vw;
-    overflow-x: auto;
+    overflow-x: scroll; /* FORZAMOS QUE EL SCROLL APAREZCA */
     overflow-y: hidden;
-    padding-bottom: 30px; /* Scroll pegado a la línea */
+    padding-bottom: 50px; /* Espacio para que la barra no tape el texto */
 }
 
-/* Scrollbar estilo Minecraft */
-.timeline-container::-webkit-scrollbar { height: 16px; }
-.timeline-container::-webkit-scrollbar-track { background: #000; }
-.timeline-container::-webkit-scrollbar-thumb { 
+/* --- DISEÑO DE LA BARRA DE SCROLL (PARA QUE SE VEA BIEN) --- */
+.timeline-container::-webkit-scrollbar {
+    height: 20px; /* Más gruesa para que sea fácil de mover */
+}
+
+.timeline-container::-webkit-scrollbar-track {
+    background: #000; /* Fondo negro para que resalte la barra */
+    border-top: 2px solid var(--android-green);
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
     background: var(--android-green); 
-    border: 4px solid #000;
+    border: 4px solid #000; /* Efecto de borde tipo bloque de Minecraft */
+    box-shadow: 0 0 10px var(--android-green);
 }
 
+.timeline-container::-webkit-scrollbar-thumb:hover {
+    background: #fff; /* Se pone blanca al pasar el mouse para saber que la agarraste */
+}
+
+/* --- TRACK Y LÍNEA --- */
 .timeline-track {
     position: relative;
     width: max-content;
-    padding: 100px 100px;
+    padding: 80px 100px;
     display: flex;
     align-items: center;
-    height: 650px; /* Aumentado para que quepan las cajas grandes */
+    height: 700px; /* Espacio suficiente para las cajas de 300px */
 }
 
-/* LÍNEA VERDE CENTRAL MÁS FUERTE */
 .main-line {
     position: absolute;
     top: 50%;
@@ -77,24 +85,23 @@ h1 {
     transform: translateY(-50%);
 }
 
-/* VIÑETAS GRANDES */
+/* ITEMS */
 .timeline-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 180px; /* Espacio extra para que no se amontonen las cajas */
+    margin: 0 180px;
     position: relative;
     z-index: 2;
     cursor: pointer;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
 }
 
 .timeline-item:hover { transform: scale(1.1); }
 
-/* CAJA DE ICONO - AHORA MÁS GRANDE */
 .icon-box {
-    width: 300px;  /* Tamaño grande solicitado */
-    height: 300px; /* Tamaño grande solicitado */
+    width: 300px;
+    height: 300px;
     background: var(--card-bg);
     border: 8px solid var(--android-green);
     display: flex;
@@ -103,46 +110,34 @@ h1 {
     box-shadow: 15px 15px 0px #000;
 }
 
-.icon-box img { 
-    width: 85%; 
-    height: auto; 
-    image-rendering: pixelated; 
-}
+.icon-box img { width: 85%; height: auto; image-rendering: pixelated; }
 
 .dot {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     background: white;
     border: 8px solid var(--android-green);
     margin: 25px 0;
-    box-shadow: 0 0 15px var(--android-green);
 }
 
 .year { 
     color: var(--android-green); 
     font-size: 1.3rem; 
-    background: rgba(0,0,0,0.8);
-    padding: 5px 15px;
+    background: #000;
+    padding: 5px 10px;
 }
 
-/* VENTANA EMERGENTE (MODAL) */
+/* MODAL */
 .overlay {
-    display: none; 
-    position: fixed; 
-    top: 0; left: 0;
-    width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.95);
-    z-index: 1000; 
-    justify-content: center; 
-    align-items: center;
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.95);
+    z-index: 1000; justify-content: center; align-items: center;
 }
 
 .modal {
     background: var(--card-bg);
     padding: 50px;
     border: 10px solid var(--android-green);
-    max-width: 850px; 
-    width: 90%;
+    max-width: 850px; width: 90%;
     box-shadow: 20px 20px 0 #000;
 }
 
