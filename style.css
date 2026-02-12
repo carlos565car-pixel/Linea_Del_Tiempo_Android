@@ -1,0 +1,113 @@
+body {
+    background: #0f1215;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.main-container {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #3ddc84; /* Verde Android */
+    text-shadow: 0 0 15px rgba(61, 220, 132, 0.5);
+    font-size: 2.5rem;
+}
+
+.timeline-wrapper {
+    position: relative;
+    padding: 100px 0;
+    margin-top: 50px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #1a1a1a, #3ddc84, #1a1a1a);
+    box-shadow: 0 0 20px #3ddc84;
+    transform: translateY(-50%);
+}
+
+.items-container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 150px;
+}
+
+.timeline-item:hover {
+    transform: scale(1.1);
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: #1e2227;
+    border: 2px solid #3ddc84;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(61, 220, 132, 0.3);
+}
+
+.icon-box img {
+    width: 80%;
+    height: auto;
+}
+
+.year {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.version {
+    color: #3ddc84;
+    font-size: 0.9rem;
+}
+
+/* Modal Estilo */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e2227;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #3ddc84;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(61, 220, 132, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    color: #3ddc84;
+    cursor: pointer;
+}
