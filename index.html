@@ -3,58 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android History Timeline</title>
+    <title>Cronología Android Completa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="main-container">
-        <h1>Evolución de Android</h1>
-        
-        <div class="timeline-wrapper">
-            <div class="timeline-line"></div>
+    <div class="header">
+        <h1>Evolución Histórica de Android</h1>
+        <p>Desliza hacia la derecha y haz clic en los iconos para ver los detalles</p>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-track">
+            <div class="main-line"></div>
             
-            <div class="items-container">
-                <div class="timeline-item" onclick="openModal('android1')">
-                    <div class="icon-box">
-                        <img src="tu-imagen-1.png" alt="Android 1.0">
-                    </div>
-                    <div class="year">2008</div>
-                    <div class="version">Android 1.0</div>
+            <div class="items-wrapper">
+                <div class="timeline-item" onclick="openModal('v1')">
+                    <div class="icon-placeholder"><img src="v1.png" alt="Android 1"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2008</span><span class="version">Android 1.0/1.1</span></div>
                 </div>
 
-                <div class="timeline-item" onclick="openModal('froyo')">
-                    <div class="icon-box">
-                        <img src="tu-imagen-froyo.png" alt="Froyo">
-                    </div>
-                    <div class="year">2010</div>
-                    <div class="version">Froyo</div>
+                <div class="timeline-item" onclick="openModal('v15')">
+                    <div class="icon-placeholder"><img src="v15.png" alt="Cupcake"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2009</span><span class="version">Cupcake</span></div>
                 </div>
 
-                <div class="timeline-item" onclick="openModal('kitkat')">
-                    <div class="icon-box">
-                        <img src="tu-imagen-kitkat.png" alt="KitKat">
-                    </div>
-                    <div class="year">2013</div>
-                    <div class="version">KitKat</div>
+                <div class="timeline-item" onclick="openModal('v16')">
+                    <div class="icon-placeholder"><img src="v16.png" alt="Donut"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2009</span><span class="version">Donut</span></div>
                 </div>
 
-                <div class="timeline-item" onclick="openModal('lollipop')">
-                    <div class="icon-box">
-                        <img src="tu-imagen-lollipop.png" alt="Lollipop">
-                    </div>
-                    <div class="year">2014</div>
-                    <div class="version">Lollipop</div>
+                <div class="timeline-item" onclick="openModal('v20')">
+                    <div class="icon-placeholder"><img src="v20.png" alt="Eclair"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2009</span><span class="version">Eclair</span></div>
                 </div>
+
+                <div class="timeline-item" onclick="openModal('v22')">
+                    <div class="icon-placeholder"><img src="v22.png" alt="Froyo"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2010</span><span class="version">Froyo</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v23')">
+                    <div class="icon-placeholder"><img src="v23.png" alt="Gingerbread"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2010</span><span class="version">Gingerbread</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v30')">
+                    <div class="icon-placeholder"><img src="v30.png" alt="Honeycomb"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2011</span><span class="version">Honeycomb</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v40')">
+                    <div class="icon-placeholder"><img src="v40.png" alt="ICS"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2011</span><span class="version">Ice Cream Sandwich</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v41')">
+                    <div class="icon-placeholder"><img src="v41.png" alt="Jelly Bean"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2012</span><span class="version">Jelly Bean</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v44')">
+                    <div class="icon-placeholder"><img src="v44.png" alt="KitKat"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2013</span><span class="version">KitKat</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v50')">
+                    <div class="icon-placeholder"><img src="v50.png" alt="Lollipop"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2014</span><span class="version">Lollipop</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v60')">
+                    <div class="icon-placeholder"><img src="v60.png" alt="Marshmallow"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2015</span><span class="version">Marshmallow</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v70')">
+                    <div class="icon-placeholder"><img src="v70.png" alt="Nougat"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2016</span><span class="version">Nougat</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v80')">
+                    <div class="icon-placeholder"><img src="v80.png" alt="Oreo"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2017</span><span class="version">Oreo</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v90')">
+                    <div class="icon-placeholder"><img src="v90.png" alt="Pie"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2018</span><span class="version">Android 9 Pie</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v10')">
+                    <div class="icon-placeholder"><img src="v10.png" alt="Android 10"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2019</span><span class="version">Android 10</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v11')">
+                    <div class="icon-placeholder"><img src="v11.png" alt="Android 11"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2020</span><span class="version">Android 11</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v12')">
+                    <div class="icon-placeholder"><img src="v12.png" alt="Android 12"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2021</span><span class="version">Android 12</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v13')">
+                    <div class="icon-placeholder"><img src="v13.png" alt="Android 13"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2022</span><span class="version">Android 13</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v14')">
+                    <div class="icon-placeholder"><img src="v14.png" alt="Android 14"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2023</span><span class="version">Android 14</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v15_real')">
+                    <div class="icon-placeholder"><img src="v15_r.png" alt="Android 15"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2024</span><span class="version">Android 15</span></div>
+                </div>
+
+                <div class="timeline-item" onclick="openModal('v16_real')">
+                    <div class="icon-placeholder"><img src="v16_r.png" alt="Android 16"></div>
+                    <div class="dot"></div>
+                    <div class="info"><span class="year">2025</span><span class="version">Android 16</span></div>
+                </div>
+
             </div>
         </div>
     </div>
 
     <div id="modal-overlay" class="overlay" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modal-data">
-                </div>
+            <div id="modal-content"></div>
         </div>
     </div>
 

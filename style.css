@@ -1,113 +1,124 @@
+:root {
+    --android-green: #3ddc84;
+    --dark-bg: #0b0e11;
+    --card-bg: #1e2227;
+}
+
 body {
-    background: #0f1215;
+    background-color: var(--dark-bg);
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     margin: 0;
     overflow-x: hidden;
 }
 
-.main-container {
-    padding: 50px 20px;
+.header {
     text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #1a1d21, var(--dark-bg));
 }
 
 h1 {
-    color: #3ddc84; /* Verde Android */
-    text-shadow: 0 0 15px rgba(61, 220, 132, 0.5);
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--android-green);
+    text-shadow: 0 0 20px rgba(61, 220, 132, 0.3);
 }
 
-.timeline-wrapper {
-    position: relative;
-    padding: 100px 0;
-    margin-top: 50px;
-}
-
-.timeline-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
+/* Contenedor de Desplazamiento */
+.timeline-container {
     width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #1a1a1a, #3ddc84, #1a1a1a);
-    box-shadow: 0 0 20px #3ddc84;
-    transform: translateY(-50%);
+    overflow-x: scroll; /* Scroll siempre activo */
+    padding: 120px 0;
+    cursor: grab;
 }
 
-.items-container {
-    display: flex;
-    justify-content: space-around;
+.timeline-container:active { cursor: grabbing; }
+
+/* Estilo barra de scroll */
+.timeline-container::-webkit-scrollbar { height: 12px; }
+.timeline-container::-webkit-scrollbar-track { background: #000; }
+.timeline-container::-webkit-scrollbar-thumb { 
+    background: var(--android-green); 
+    border-radius: 10px;
+    border: 3px solid #000;
+}
+
+.timeline-track {
+    display: inline-block;
     position: relative;
-    z-index: 2;
+    padding: 0 100px;
+}
+
+.main-line {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--android-green);
+    box-shadow: 0 0 20px var(--android-green);
+    z-index: 1;
+}
+
+.items-wrapper {
+    display: flex;
+    gap: 120px;
 }
 
 .timeline-item {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 150px;
-}
-
-.timeline-item:hover {
-    transform: scale(1.1);
-}
-
-.icon-box {
-    width: 80px;
-    height: 80px;
-    background: #1e2227;
-    border: 2px solid #3ddc84;
-    border-radius: 15px;
-    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(61, 220, 132, 0.3);
-}
-
-.icon-box img {
-    width: 80%;
-    height: auto;
-}
-
-.year {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.version {
-    color: #3ddc84;
-    font-size: 0.9rem;
-}
-
-/* Modal Estilo */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #1e2227;
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid #3ddc84;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    text-align: left;
-    box-shadow: 0 0 30px rgba(61, 220, 132, 0.2);
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px; right: 20px;
-    font-size: 30px;
-    color: #3ddc84;
+    z-index: 2;
+    transition: 0.3s ease;
     cursor: pointer;
 }
+
+.timeline-item:hover { transform: translateY(-15px); }
+
+.icon-placeholder {
+    width: 100px;
+    height: 100px;
+    background: var(--card-bg);
+    border: 2px solid var(--android-green);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+
+.icon-placeholder img { width: 80%; object-fit: contain; }
+
+.dot {
+    width: 24px; height: 24px;
+    background: #fff;
+    border: 5px solid var(--android-green);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px var(--android-green);
+}
+
+.info { text-align: center; white-space: normal; width: 150px; }
+.year { display: block; font-size: 1.4rem; font-weight: bold; }
+.version { color: var(--android-green); font-size: 1rem; margin-top: 5px; }
+
+/* Modales */
+.overlay {
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+    z-index: 1000; justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal {
+    background: var(--card-bg);
+    padding: 40px; border-radius: 30px;
+    border: 2px solid var(--android-green);
+    max-width: 600px; width: 90%;
+    max-height: 80vh; overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.close-btn { position: absolute; top: 20px; right: 25px; font-size: 35px; color: var(--android-green); cursor: pointer; }
