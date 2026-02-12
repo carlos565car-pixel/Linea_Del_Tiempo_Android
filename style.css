@@ -24,16 +24,16 @@ h1 {
     text-shadow: 0 0 15px rgba(61, 220, 132, 0.4);
 }
 
-/* CONTENEDOR PRINCIPAL DEL SCROLL */
+
 .timeline-container {
     width: 100%;
     overflow-x: auto; 
     padding: 100px 0;
     display: block;
-    white-space: nowrap; /* Evita que los elementos bajen */
+    white-space: nowrap; 
 }
 
-/* Estilo de la barra de scroll */
+
 .timeline-container::-webkit-scrollbar { height: 10px; }
 .timeline-container::-webkit-scrollbar-track { background: #111; }
 .timeline-container::-webkit-scrollbar-thumb { 
@@ -49,7 +49,7 @@ h1 {
 
 .main-line {
     position: absolute;
-    top: 132px; /* Alineado con el centro de los puntos */
+    top: 132px;
     left: 0;
     right: 0;
     height: 6px;
@@ -59,7 +59,7 @@ h1 {
 }
 
 .items-wrapper {
-    display: flex; /* Fuerza alineación horizontal */
+    display: flex; 
     gap: 120px;
     position: relative;
     z-index: 2;
@@ -103,7 +103,7 @@ h1 {
 .year { display: block; font-weight: bold; font-size: 1.3rem; }
 .version { color: var(--android-green); font-size: 0.9rem; }
 
-/* MODALES */
+
 .overlay {
     display: none;
     position: fixed;
