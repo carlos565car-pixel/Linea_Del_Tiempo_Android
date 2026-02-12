@@ -177,4 +177,44 @@ h1 {
     text-align: right;
     font-size: 0.8rem;
 }
+/* ================= RESPONSIVE ================= */
+
+/* CELULARES */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-track {
+        height: 300px;
+        padding: 30px 40px;
+    }
+
+    .icon-box {
+        width: 140px;
+        height: 140px;
+    }
+
+    .year {
+        font-size: 0.6rem;
+    }
+
+    .modal {
+        max-width: 95%;
+        font-size: 0.6rem;
+    }
+}
+
+/* TABLETS */
+@media (max-width: 1024px) {
+    .icon-box {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
 
