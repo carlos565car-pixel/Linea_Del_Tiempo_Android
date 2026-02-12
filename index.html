@@ -3,50 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Timeline - Minecraft Style</title>
+    <title>Android Evolution - Minecraft Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --android-green: #3ddc84;
             --dark-bg: #0b0e11;
-            /* Fuente estilo pixel/Minecraft */
+            --card-bg: #1e2227;
             --font-pixel: 'Press Start 2P', cursive;
         }
 
+        /* CONFIGURACIÓN GENERAL */
         body {
             background-color: var(--dark-bg);
             color: white;
             font-family: var(--font-pixel);
             margin: 0;
-            overflow-x: hidden;
-            /* Ajustamos el tamaño base porque las fuentes de pixel son grandes */
-            font-size: 10px; 
+            padding: 0;
+            font-size: 10px;
             line-height: 1.6;
         }
 
         .header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         h1 {
             color: var(--android-green);
-            text-shadow: 4px 4px #000;
             font-size: 1.8rem;
+            text-shadow: 4px 4px #000;
             margin-bottom: 20px;
         }
 
-        .header p { font-size: 0.7rem; color: #aaa; }
+        .header p { font-size: 0.7rem; color: #888; }
 
-        /* Contenedor de la línea del tiempo */
+        /* CONTENEDOR DEL SCROLL HORIZONTAL */
         .timeline-container {
-            width: 100%;
-            overflow-x: auto;
+            width: 100vw;
+            overflow-x: scroll; /* ACTIVA EL DESPLAZAMIENTO */
+            overflow-y: hidden;
             padding: 180px 0;
             position: relative;
-            scrollbar-width: thin;
-            scrollbar-color: var(--android-green) #000;
+            scroll-behavior: smooth;
+        }
+
+        /* Estilo Retro para la barra de scroll */
+        .timeline-container::-webkit-scrollbar { height: 12px; }
+        .timeline-container::-webkit-scrollbar-track { background: #000; }
+        .timeline-container::-webkit-scrollbar-thumb { 
+            background: var(--android-green); 
+            border: 3px solid #000;
         }
 
         .timeline-track {
@@ -54,10 +62,10 @@
             align-items: center;
             padding: 0 100px;
             position: relative;
-            min-width: max-content;
+            width: max-content; /* Permite que la línea crezca horizontalmente */
         }
 
-        /* La línea central */
+        /* LÍNEA VERDE CENTRAL */
         .main-line {
             position: absolute;
             top: 50%;
@@ -65,11 +73,12 @@
             right: 0;
             height: 8px;
             background: var(--android-green);
-            box-shadow: 0 0 15px var(--android-green);
+            box-shadow: 0 0 20px var(--android-green);
             z-index: 1;
             transform: translateY(-50%);
         }
 
+        /* ELEMENTOS DE LA CRONOLOGÍA */
         .timeline-item {
             display: flex;
             flex-direction: column;
@@ -78,32 +87,33 @@
             position: relative;
             z-index: 2;
             cursor: pointer;
-            transition: 0.2s;
+            transition: transform 0.2s;
         }
 
-        .timeline-item:hover { transform: scale(1.1); }
+        .timeline-item:hover { transform: scale(1.1) translateY(-10px); }
 
-        /* Cuadros de iconos estilo retro */
         .icon-placeholder {
             width: 90px; height: 90px;
-            background: #1e2227;
+            background: var(--card-bg);
             border: 4px solid var(--android-green);
-            image-rendering: pixelated; /* Para que las imágenes se vean más 'retro' */
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 20px;
+            image-rendering: pixelated;
         }
+
+        .icon-placeholder img { width: 70%; height: auto; }
 
         .dot {
             width: 24px; height: 24px;
-            background: white;
+            background: #fff;
             border: 6px solid var(--android-green);
-            image-rendering: pixelated;
+            border-radius: 0; /* Estilo cuadrado/pixel */
             margin: 15px 0;
         }
 
-        .year { color: var(--android-green); margin-top: 10px; font-size: 0.8rem; }
+        .year { color: var(--android-green); font-size: 0.8rem; margin-top: 10px; }
 
-        /* Ventanas Emergentes (Modales) */
+        /* VENTANA EMERGENTE (MODAL) */
         .overlay {
             display: none; position: fixed; top: 0; left: 0;
             width: 100%; height: 100%; background: rgba(0,0,0,0.9);
@@ -112,23 +122,21 @@
         }
 
         .modal {
-            background: #1e2227;
+            background: var(--card-bg);
             padding: 40px;
             border: 6px solid var(--android-green);
-            max-width: 700px;
-            width: 95%;
+            max-width: 650px; width: 95%;
             position: relative;
             box-shadow: 10px 10px 0px #000;
         }
 
-        .modal h2 { color: var(--android-green); font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; }
+        .modal h2 { color: var(--android-green); font-size: 1.1rem; margin-bottom: 25px; }
         
-        /* Estilo del texto de información */
-        .modal-info-text {
+        .modal-text {
             font-size: 0.75rem;
-            line-height: 2;
+            line-height: 2.2; /* Espaciado para los 5-7 renglones */
             text-align: justify;
-            color: #eee;
+            color: #ddd;
         }
 
         .close-btn {
@@ -136,15 +144,15 @@
             top: 10px; right: 10px;
             color: var(--android-green);
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>ANDROID EVOLUTION</h1>
-        <p>USE EL SCROLL LATERAL Y HAGA CLICK EN LOS ICONOS</p>
+        <h1>ANDROID PIXEL HISTORY</h1>
+        <p>[ USE EL SCROLL LATERAL PARA NAVEGAR ]</p>
     </div>
 
     <div class="timeline-container">
@@ -152,66 +160,84 @@
             <div class="main-line"></div>
             
             <div class="timeline-item" onclick="openModal('v1')">
-                <div class="icon-placeholder"><img src="v1.png" width="70%"></div>
+                <div class="icon-placeholder"><img src="v1.png" alt="v1"></div>
                 <div class="dot"></div>
                 <div class="info"><span class="year">2008</span></div>
             </div>
 
             <div class="timeline-item" onclick="openModal('v15')">
-                <div class="icon-placeholder"><img src="v15.png" width="70%"></div>
+                <div class="icon-placeholder"><img src="v15.png" alt="v15"></div>
+                <div class="dot"></div>
+                <div class="info"><span class="year">2009</span></div>
+            </div>
+
+            <div class="timeline-item" onclick="openModal('v20')">
+                <div class="icon-placeholder"><img src="v20.png" alt="v20"></div>
                 <div class="dot"></div>
                 <div class="info"><span class="year">2009</span></div>
             </div>
 
             <div class="timeline-item" onclick="openModal('v40')">
-                <div class="icon-placeholder"><img src="v40.png" width="70%"></div>
+                <div class="icon-placeholder"><img src="v40.png" alt="v40"></div>
                 <div class="dot"></div>
                 <div class="info"><span class="year">2011</span></div>
             </div>
 
             <div class="timeline-item" onclick="openModal('v50')">
-                <div class="icon-placeholder"><img src="v50.png" width="70%"></div>
+                <div class="icon-placeholder"><img src="v50.png" alt="v50"></div>
                 <div class="dot"></div>
                 <div class="info"><span class="year">2014</span></div>
             </div>
-            
+
+            <div class="timeline-item" onclick="openModal('v15_r')">
+                <div class="icon-placeholder"><img src="v15_r.png" alt="v15r"></div>
+                <div class="dot"></div>
+                <div class="info"><span class="year">2024</span></div>
             </div>
+        </div>
     </div>
 
     <div id="modal-overlay" class="overlay" onclick="closeModal()">
         <div class="modal" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeModal()">[X]</span>
+            <span class="close-btn" onclick="closeModal()">[X] CLOSE</span>
             <div id="modal-content"></div>
         </div>
     </div>
 
     <script>
-        // Información extendida de 5 a 7 renglones aproximadamente
-        const androidData = {
+        const androidInfo = {
             'v1': {
-                title: "Android 1.0 (The Beginning)",
-                text: "Lanzado oficialmente en 2008 junto al dispositivo T-Mobile G1, esta versión marcó el nacimiento de una alternativa abierta en el mercado móvil. Incluía servicios básicos que hoy son pilares, como la integración nativa con Gmail, Google Maps y la primera versión del Android Market. Su sistema de notificaciones desplegable fue revolucionario para la época, permitiendo a los usuarios gestionar alertas de una manera mucho más eficiente que la competencia. Aunque carecía de una interfaz pulida, sentó las bases técnicas para el ecosistema global."
+                title: "ANDROID 1.0: EL COMIENZO",
+                text: "Lanzado en septiembre de 2008 con el HTC Dream, esta versión representó la primera incursión comercial de Google en los móviles. Fue una plataforma diseñada para la conectividad constante, integrando de forma nativa servicios como Gmail, Google Maps y un navegador web rudimentario. Lo más destacado fue su mercado de aplicaciones, el Android Market, y un sistema de notificaciones persistente que superaba a sus rivales de la época. Aunque su interfaz era tosca y carecía de soporte para video, sentó las bases de la libertad de código abierto que define a Android hoy."
             },
             'v15': {
-                title: "Android 1.5 Cupcake",
-                text: "Esta actualización de 2009 fue la primera en adoptar el nombre de un postre, iniciando una de las tradiciones más queridas de la tecnología. Su principal innovación fue la introducción del teclado virtual en pantalla, lo que permitió que los fabricantes diseñaran teléfonos sin necesidad de teclados físicos deslizantes. Además, Cupcake trajo consigo el soporte para widgets de terceros, permitiendo a los usuarios ver información en tiempo real sin abrir las aplicaciones. También habilitó por primera vez la grabación de video y la subida directa de contenido a plataformas como YouTube."
+                title: "ANDROID 1.5: CUPCAKE",
+                text: "Llegó en abril de 2009 y fue la versión que inició la tradición de nombrar las actualizaciones con postres en orden alfabético. Su mayor hito tecnológico fue el soporte para un teclado virtual en pantalla, eliminando la dependencia de los teclados físicos deslizantes. Cupcake introdujo la capacidad de grabar y reproducir videos, además de permitir la carga directa de archivos a YouTube y Picasa desde el celular. También habilitó los famosos widgets de escritorio, permitiendo a los usuarios ver datos rápidos como el clima o la música sin entrar a la aplicación."
+            },
+            'v20': {
+                title: "ANDROID 2.0: ECLAIR",
+                text: "Lanzado a finales de 2009 junto al Motorola Droid, Eclair fue el salto que puso a Android en el mapa de los smartphones de alta gama. Introdujo la navegación paso a paso de Google Maps con voz de forma gratuita, lo que supuso una amenaza directa para los dispositivos GPS tradicionales. La interfaz fue refinada para pantallas de mayor resolución, añadiendo soporte para múltiples cuentas de usuario y fondos de pantalla animados. También mejoró drásticamente el soporte de la cámara con flash digital y zoom, convirtiendo al móvil en una herramienta multimedia mucho más versátil y potente."
             },
             'v40': {
-                title: "Android 4.0 Ice Cream Sandwich",
-                text: "Presentado a finales de 2011, esta versión representó el mayor cambio visual hasta ese momento mediante el lenguaje de diseño 'Holo'. Logró unificar por fin la experiencia entre teléfonos y tablets, eliminando la necesidad de versiones separadas como Honeycomb. Introdujo botones de navegación virtuales en pantalla y la capacidad de cerrar aplicaciones simplemente deslizándolas en el menú de multitarea. También estrenó el desbloqueo facial y el uso de Android Beam mediante tecnología NFC para compartir archivos de forma rápida. Fue el paso definitivo hacia la madurez estética y funcional del sistema."
+                title: "ANDROID 4.0: ICE CREAM SANDWICH",
+                text: "Esta actualización de 2011 fue un hito de diseño, introduciendo el lenguaje visual Holo con tonos azules y la elegante fuente Roboto. Su objetivo principal fue unificar la experiencia de usuario entre smartphones y tablets, eliminando por fin los botones físicos en favor de botones virtuales en pantalla. ICS trajo consigo la capacidad de cerrar aplicaciones deslizando el dedo en la lista de multitarea y el innovador desbloqueo facial. También se introdujo Android Beam para compartir contenido mediante NFC y se mejoraron sustancialmente los controles de uso de datos móviles."
             },
             'v50': {
-                title: "Android 5.0 Lollipop",
-                text: "Lollipop llegó en 2014 para revolucionar la apariencia del sistema con la introducción de Material Design, basado en sombras y capas físicas. Esta versión cambió el motor interno de Dalvik a ART, lo que mejoró drásticamente el rendimiento de las aplicaciones y la fluidez general del sistema operativo. Las notificaciones ahora aparecían en la pantalla de bloqueo y se priorizaban de forma inteligente según el uso del usuario. Además, se integró el Proyecto Volta, diseñado específicamente para optimizar el consumo de energía y extender la vida útil de la batería. Fue una de las actualizaciones más ambiciosas y visualmente impactantes."
+                title: "ANDROID 5.0: LOLLIPOP",
+                text: "Presentado en 2014, Lollipop revolucionó la estética con Material Design, una filosofía basada en capas de papel virtuales y sombras realistas. El cambio técnico más profundo fue la sustitución del motor Dalvik por ART, lo que mejoró enormemente el rendimiento de las apps y la eficiencia energética. Las notificaciones se rediseñaron para aparecer en la pantalla de bloqueo y ser gestionadas por prioridad, evitando interrupciones molestas. Además, se añadió soporte nativo para sistemas de 64 bits y el Proyecto Volta para optimizar la duración de la batería, marcando un antes y un después en la modernidad del sistema."
+            },
+            'v15_r': {
+                title: "ANDROID 15: VANILLA ICE CREAM",
+                text: "La versión de 2024 se enfoca profundamente en la seguridad del usuario y la optimización de dispositivos con inteligencia artificial integrada. Incluye una función de 'Espacio Privado' que permite ocultar y bloquear aplicaciones sensibles bajo una capa extra de biometría, protegiendo datos personales. Se ha mejorado la multitarea en tablets y dispositivos plegables, permitiendo fijar combinaciones de aplicaciones para un flujo de trabajo más profesional. Además, Android 15 introduce conectividad satelital nativa para emergencias y una gestión de batería ultra-eficiente que aprende de los hábitos diarios del usuario."
             }
         };
 
         function openModal(id) {
-            const data = androidData[id];
+            const data = androidInfo[id];
             const content = document.getElementById('modal-content');
             content.innerHTML = `
                 <h2>${data.title}</h2>
-                <div class="modal-info-text">${data.text}</div>
+                <div class="modal-text">${data.text}</div>
             `;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
