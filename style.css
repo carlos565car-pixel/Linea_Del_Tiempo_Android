@@ -7,17 +7,18 @@
 
 body {
     background-color: var(--dark-bg);
+    /* FONDO MEJORADO: Cuadrícula retro-tech */
     background-image: 
         linear-gradient(rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px),
         linear-gradient(90deg, rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px);
-    background-size: 50px 50px;
+    background-size: 60px 60px;
     color: white;
     font-family: var(--font-pixel);
     margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Evita que la página suba y baje */
+    overflow: hidden; /* Evita scroll vertical */
 }
 
 .header {
@@ -26,7 +27,11 @@ body {
     z-index: 10;
 }
 
-h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; }
+h1 { 
+    color: var(--android-green); 
+    font-size: 1.8rem; 
+    text-shadow: 4px 4px #000;
+}
 
 /* CONTENEDOR DEL SCROLL */
 .timeline-wrapper {
@@ -38,46 +43,33 @@ h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; 
 
 .timeline-container {
     width: 100vw;
-    overflow-x: scroll; /* FORZAMOS QUE EL SCROLL APAREZCA */
+    overflow-x: auto; /* Permite el movimiento */
     overflow-y: hidden;
-    padding-bottom: 50px; /* Espacio para que la barra no tape el texto */
+    padding-bottom: 50px;
+    scroll-behavior: smooth; /* Movimiento fluido con flechas */
 }
 
-/* --- DISEÑO DE LA BARRA DE SCROLL (PARA QUE SE VEA BIEN) --- */
+/* Ocultar barra de scroll pero mantener funcionalidad */
 .timeline-container::-webkit-scrollbar {
-    height: 20px; /* Más gruesa para que sea fácil de mover */
+    height: 10px;
 }
-
-.timeline-container::-webkit-scrollbar-track {
-    background: #000; /* Fondo negro para que resalte la barra */
-    border-top: 2px solid var(--android-green);
-}
-
 .timeline-container::-webkit-scrollbar-thumb {
-    background: var(--android-green); 
-    border: 4px solid #000; /* Efecto de borde tipo bloque de Minecraft */
-    box-shadow: 0 0 10px var(--android-green);
+    background: var(--android-green);
+    border-radius: 10px;
 }
 
-.timeline-container::-webkit-scrollbar-thumb:hover {
-    background: #fff; /* Se pone blanca al pasar el mouse para saber que la agarraste */
-}
-
-/* --- TRACK Y LÍNEA --- */
 .timeline-track {
     position: relative;
     width: max-content;
-    padding: 80px 100px;
+    padding: 0 100px;
     display: flex;
     align-items: center;
-    height: 700px; /* Espacio suficiente para las cajas de 300px */
+    height: 650px; /* Altura para cajas de 300px */
 }
 
 .main-line {
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
+    top: 50%; left: 0; right: 0;
     height: 12px;
     background: var(--android-green);
     box-shadow: 0 0 30px var(--android-green);
@@ -85,35 +77,41 @@ h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; 
     transform: translateY(-50%);
 }
 
-/* ITEMS */
+/* ELEMENTOS GIGANTES */
 .timeline-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 180px;
+    margin: 0 150px; /* Espacio para que no se peguen */
     position: relative;
     z-index: 2;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.timeline-item:hover { transform: scale(1.1); }
+.timeline-item:hover { transform: scale(1.05); }
 
 .icon-box {
-    width: 300px;
-    height: 300px;
+    width: 300px;  /* Tamaño grande solicitado */
+    height: 300px; 
     background: var(--card-bg);
     border: 8px solid var(--android-green);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 15px 15px 0px #000;
+    overflow: hidden;
 }
 
-.icon-box img { width: 85%; height: auto; image-rendering: pixelated; }
+.icon-box img { 
+    width: 85%; 
+    height: auto; 
+    image-rendering: pixelated; 
+}
 
 .dot {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     background: white;
     border: 8px solid var(--android-green);
     margin: 25px 0;
@@ -123,7 +121,7 @@ h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; 
     color: var(--android-green); 
     font-size: 1.3rem; 
     background: #000;
-    padding: 5px 10px;
+    padding: 5px 15px;
 }
 
 /* MODAL */
@@ -137,10 +135,6 @@ h1 { color: var(--android-green); font-size: 1.8rem; text-shadow: 4px 4px #000; 
     background: var(--card-bg);
     padding: 50px;
     border: 10px solid var(--android-green);
-    max-width: 850px; width: 90%;
+    max-width: 800px; width: 90%;
     box-shadow: 20px 20px 0 #000;
 }
-
-.modal h2 { color: var(--android-green); font-size: 1.3rem; margin-bottom: 25px; }
-.modal p { line-height: 2.2; text-align: justify; font-size: 0.9rem; color: #eee; }
-.close-btn { float: right; color: var(--android-green); cursor: pointer; }
