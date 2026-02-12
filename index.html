@@ -3,35 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android History Timeline</title>
+    <title>Historia de Android</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="header">
-    <h1>ANDROID EVOLUTION TIMELINE</h1>
+<h1 class="titulo">EVOLUCIÓN DE ANDROID</h1>
+
+<div class="timeline-container">
+    <div id="timeline-content" class="timeline-track"></div>
 </div>
 
-<div class="timeline-wrapper">
-    <div class="timeline-container">
-        <div class="timeline-track">
-            <div class="main-line"></div>
-            <div id="timeline-content"></div>
-        </div>
-    </div>
-</div>
-
+<!-- Ventana emergente -->
 <div id="overlay" class="overlay" onclick="closeModal()">
     <div class="modal" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="closeModal()">✖ CERRAR</span>
+        <span class="close-btn" onclick="closeModal()">X</span>
         <div id="modal-content"></div>
     </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
