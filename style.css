@@ -2,135 +2,112 @@
     --android-green: #3ddc84;
     --dark-bg: #0b0e11;
     --card-bg: #1e2227;
+    --font-pixel: 'Press Start 2P', cursive;
 }
 
 body {
     background-color: var(--dark-bg);
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-pixel);
     margin: 0;
     overflow-x: hidden;
+    font-size: 10px;
 }
 
 .header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(to bottom, #1a1d21, var(--dark-bg));
 }
 
 h1 {
-    font-size: 2.5rem;
     color: var(--android-green);
-    text-shadow: 0 0 15px rgba(61, 220, 132, 0.4);
+    font-size: 1.5rem;
+    text-shadow: 4px 4px #000;
 }
 
-
+/* EL CONTENEDOR DEL SCROLL */
 .timeline-container {
-    width: 100%;
-    overflow-x: auto; 
-    padding: 100px 0;
-    display: block;
-    white-space: nowrap; 
+    width: 100vw;
+    overflow-x: auto;
+    padding: 180px 0;
+    scrollbar-width: thick;
+    scrollbar-color: var(--android-green) #000;
 }
 
-
-.timeline-container::-webkit-scrollbar { height: 10px; }
-.timeline-container::-webkit-scrollbar-track { background: #111; }
+.timeline-container::-webkit-scrollbar { height: 12px; }
+.timeline-container::-webkit-scrollbar-track { background: #000; }
 .timeline-container::-webkit-scrollbar-thumb { 
     background: var(--android-green); 
-    border-radius: 10px; 
+    border: 3px solid #000;
 }
 
 .timeline-track {
-    display: inline-block;
     position: relative;
+    width: max-content;
     padding: 0 100px;
 }
 
+/* LÍNEA VERDE CENTRAL */
 .main-line {
     position: absolute;
-    top: 132px;
+    top: 50%;
     left: 0;
     right: 0;
-    height: 6px;
+    height: 8px;
     background: var(--android-green);
-    box-shadow: 0 0 15px var(--android-green);
+    box-shadow: 0 0 20px var(--android-green);
     z-index: 1;
-}
-
-.items-wrapper {
-    display: flex; 
-    gap: 120px;
-    position: relative;
-    z-index: 2;
+    transform: translateY(-50%);
 }
 
 .timeline-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 50px;
+    position: relative;
+    z-index: 2;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: 0.2s;
 }
 
-.timeline-item:hover { transform: translateY(-15px); }
+.timeline-item:hover { transform: scale(1.1); }
 
-.icon-placeholder {
-    width: 100px;
-    height: 100px;
+.icon-box {
+    width: 80px; height: 80px;
     background: var(--card-bg);
-    border: 2px solid var(--android-green);
-    border-radius: 20px;
+    border: 4px solid var(--android-green);
+    display: flex; align-items: center; justify-content: center;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
-.icon-placeholder img { width: 80%; height: auto; }
+.icon-box img { width: 70%; image-rendering: pixelated; }
 
 .dot {
-    width: 24px;
-    height: 24px;
+    width: 20px; height: 20px;
     background: white;
     border: 5px solid var(--android-green);
-    border-radius: 50%;
-    margin-bottom: 20px;
+    margin: 10px 0;
 }
 
-.info { text-align: center; width: 150px; white-space: normal; }
-.year { display: block; font-weight: bold; font-size: 1.3rem; }
-.version { color: var(--android-green); font-size: 0.9rem; }
+.year { color: var(--android-green); font-size: 0.8rem; }
 
-
+/* ESTILO DEL MODAL */
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+    z-index: 1000; justify-content: center; align-items: center;
 }
 
 .modal {
     background: var(--card-bg);
     padding: 40px;
-    border-radius: 25px;
-    border: 2px solid var(--android-green);
-    max-width: 550px;
-    width: 90%;
-    position: relative;
-    color: white;
+    border: 6px solid var(--android-green);
+    max-width: 600px; width: 90%;
+    box-shadow: 8px 8px 0px #000;
 }
 
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
-    color: var(--android-green);
-    cursor: pointer;
-}
+.modal h2 { color: var(--android-green); font-size: 1rem; margin-bottom: 20px; }
+.modal p { line-height: 2; text-align: justify; font-size: 0.7rem; color: #ccc; }
+
+.close-btn { float: right; color: var(--android-green); cursor: pointer; }

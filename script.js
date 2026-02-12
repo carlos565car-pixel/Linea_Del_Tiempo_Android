@@ -1,133 +1,41 @@
-const androidDatabase = {
-    'v1': {
-        title: "Android 1.0 y 1.1 (2008–2009)",
-        desc: "Android fue creado por Android Inc. y comprado por Google en 2005.",
-        items: ["Integración con Google (Gmail, Maps)", "Navegador basado en WebKit", "Android Market original", "Notificaciones en barra superior"]
-    },
-    'v15': {
-        title: "Android 1.5 Cupcake (2009)",
-        desc: "Primera versión con nombre de postre.",
-        items: ["Teclado virtual en pantalla", "Widgets en inicio", "Grabación de video", "Soporte Bluetooth"]
-    },
-    'v16': {
-        title: "Android 1.6 Donut (2009)",
-        desc: "Android empezó a adaptarse a muchos dispositivos.",
-        items: ["Soporte para diferentes tamaños de pantalla", "Búsqueda rápida universal", "Mejor cámara y galería"]
-    },
-    'v20': {
-        title: "Android 2.0–2.1 Eclair (2009)",
-        desc: "Comienza la competencia real con el iPhone.",
-        items: ["Google Maps con navegación GPS", "Fondos de pantalla animados", "Múltiples cuentas de Google"]
-    },
-    'v22': {
-        title: "Android 2.2 Froyo (2010)",
-        desc: "Un salto masivo en velocidad.",
-        items: ["Hotspot Wi-Fi", "Rendimiento JIT más rápido", "Instalación de apps en tarjeta SD"]
-    },
-    'v23': {
-        title: "Android 2.3 Gingerbread (2010)",
-        desc: "Refinamiento para smartphones modernos.",
-        items: ["Soporte para NFC", "Mejor gestión de batería", "Cámaras frontales"]
-    },
-    'v30': {
-        title: "Android 3.0 Honeycomb (2011)",
-        desc: "Versión exclusiva para tablets.",
-        items: ["Interfaz holográfica", "Botones virtuales", "Multitarea avanzada"]
-    },
-    'v40': {
-        title: "Android 4.0 Ice Cream Sandwich (2011)",
-        desc: "Unificó teléfonos y tablets.",
-        items: ["Face Unlock", "Diseño Holo y fuente Roboto", "Android Beam"]
-    },
-    'v41': {
-        title: "Android 4.1 Jelly Bean (2012)",
-        desc: "Project Butter: Fluidez total.",
-        items: ["Google Now", "Animaciones a 60fps", "Notificaciones interactivas"]
-    },
-    'v44': {
-        title: "Android 4.4 KitKat (2013)",
-        desc: "Optimizado para celulares económicos.",
-        items: ["Soporte para 512MB de RAM", "Modo inmersivo", "Comando Ok Google"]
-    },
-    'v50': {
-        title: "Android 5.0 Lollipop (2014)",
-        desc: "Introducción de Material Design.",
-        items: ["Nuevo diseño visual", "Soporte 64 bits", "Project Volta para batería"]
-    },
-    'v60': {
-        title: "Android 6.0 Marshmallow (2015)",
-        desc: "Control total de la privacidad.",
-        items: ["Permisos individuales de apps", "Modo Doze", "Soporte USB-C"]
-    },
-    'v70': {
-        title: "Android 7.0 Nougat (2016)",
-        desc: "Multitarea real.",
-        items: ["Pantalla dividida", "Actualizaciones inteligentes", "Mejor VR"]
-    },
-    'v80': {
-        title: "Android 8.0 Oreo (2017)",
-        desc: "Rápido y ordenado.",
-        items: ["Picture-in-Picture", "Canales de notificaciones", "Arranque más rápido"]
-    },
-    'v90': {
-        title: "Android 9 Pie (2018)",
-        desc: "Inteligencia Artificial aplicada.",
-        items: ["Navegación por gestos", "Batería adaptativa", "Bienestar Digital"]
-    },
-    'v10': {
-        title: "Android 10 (2019)",
-        desc: "Privacidad y Modo Oscuro nativo.",
-        items: ["Modo oscuro sistémico", "Soporte para plegables", "Subtítulos automáticos"]
-    },
-    'v11': {
-        title: "Android 11 (2020)",
-        desc: "Mejoras en mensajería.",
-        items: ["Burbujas de chat", "Grabador de pantalla", "Permisos temporales"]
-    },
-    'v12': {
-        title: "Android 12 (2021)",
-        desc: "Material You: Colores dinámicos.",
-        items: ["Rediseño completo", "Panel de privacidad", "Indicadores de cámara/micrófono"]
-    },
-    'v13': {
-        title: "Android 13 (2022)",
-        desc: "Personalización y privacidad.",
-        items: ["Permiso para notificaciones", "Idiomas por app", "Mejor seguridad"]
-    },
-    'v14': {
-        title: "Android 14 (2023)",
-        desc: "Optimización y personalización.",
-        items: ["Pantallas de bloqueo personalizadas", "Mejor eficiencia", "Accesibilidad mejorada"]
-    },
-    'v15_real': {
-        title: "Android 15 (2024)",
-        desc: "Sandbox y seguridad total.",
-        items: ["Privacidad avanzada", "Rendimiento mejorado", "Multitarea avanzada"]
-    },
-    'v16_real': {
-        title: "Android 16 (2025)",
-        desc: "El futuro de la IA.",
-        items: ["IA integrada profundamente", "Notificaciones dinámicas", "Soporte XR"]
-    }
-};
+const versions = [
+    { id: 'v1', year: '2008', name: 'Android 1.0', img: 'v1.png', desc: 'Lanzado con el HTC Dream, fue el inicio de todo. Introdujo la integración nativa con Gmail y Google Maps, además del Android Market original. Su sistema de notificaciones desplegable fue una innovación que definió la industria móvil. Aunque no permitía grabar video y era visualmente básico, demostró que un sistema abierto podía competir con el iPhone, sentando las bases de la personalización total.' },
+    { id: 'v15', year: '2009', name: 'Cupcake', img: 'v15.png', desc: 'Introdujo el teclado virtual en pantalla, permitiendo smartphones sin botones físicos deslizantes. Fue la primera versión en usar nombres de postres y añadió los widgets, una función icónica de Android. También permitió por primera vez subir videos a YouTube directamente desde el teléfono. Esta versión pulió la experiencia de usuario y trajo las animaciones de transición que hicieron el sistema mucho más fluido.' },
+    { id: 'v20', year: '2009', name: 'Eclair', img: 'v20.png', desc: 'Trajo la navegación GPS gratuita paso a paso a través de Google Maps, lo que cambió el mercado de los viajes. Añadió soporte para fondos de pantalla animados y múltiples cuentas de correo en un solo dispositivo. La cámara recibió mejoras críticas como el soporte para flash digital y zoom. Fue el salto necesario para que Android fuera visto como una herramienta profesional poderosa y no solo un experimento de software.' },
+    { id: 'v22', year: '2010', name: 'Froyo', img: 'v22.png', desc: 'Se centró en la velocidad pura gracias al compilador JIT, haciendo que el sistema fuera 5 veces más rápido que antes. Introdujo el Hotspot Wi-Fi para compartir datos y el soporte para Adobe Flash en el navegador. Las notificaciones push de Google permitieron que las apps se sincronizaran en tiempo real. Fue la versión que consolidó a Android como el sistema operativo más rápido y versátil del mercado mundial.' },
+    { id: 'v23', year: '2010', name: 'Gingerbread', img: 'v23.png', desc: 'Rediseñó la interfaz con colores oscuros para optimizar las nuevas pantallas OLED y mejorar la duración de la batería. Introdujo el soporte para tecnología NFC y sensores como el giroscopio para juegos avanzados. También habilitó el soporte para múltiples cámaras, facilitando el inicio de la era de las selfies. Fue una versión extremadamente estable que muchos dispositivos usaron durante años por su gran eficiencia.' },
+    { id: 'v40', year: '2011', name: 'Ice Cream Sandwich', img: 'v40.png', desc: 'Unificó el diseño de tablets y celulares bajo el estilo Holo y la elegante fuente Roboto. Introdujo botones virtuales en pantalla y el cierre de apps mediante deslizamiento lateral en la multitarea. Estrenó el desbloqueo facial y el uso de Android Beam para compartir archivos por contacto. Representó el mayor cambio estético en la historia de Android, haciendo que el sistema fuera visualmente hermoso y moderno.' },
+    { id: 'v44', year: '2013', name: 'KitKat', img: 'v44.png', desc: 'Fue optimizado para funcionar en dispositivos con solo 512MB de RAM, llevando Android moderno a los celulares más económicos. Introdujo el comando "OK Google" y el modo inmersivo que ocultaba las barras para ver contenido a pantalla completa. Los contactos se organizaban de forma inteligente según con quién hablaras más. Fue una actualización clave para reducir la fragmentación y estandarizar la experiencia en todo el mundo.' },
+    { id: 'v50', year: '2014', name: 'Lollipop', img: 'v50.png', desc: 'Marcó la llegada de Material Design, un sistema visual basado en sombras y capas de papel digital. Introdujo el motor ART para un rendimiento mucho más suave y el soporte nativo para arquitecturas de 64 bits. Las notificaciones aparecieron por primera vez en la pantalla de bloqueo y el Proyecto Volta mejoró la gestión de energía. Fue una renovación total que convirtió a Android en una plataforma visualmente coherente y vibrante.' },
+    { id: 'v80', year: '2017', name: 'Oreo', img: 'v80.png', desc: 'Introdujo el modo Picture-in-Picture para ver videos mientras usas otras apps y los canales de notificación para un control granular. Estrenó Android Go para hardware limitado y los iconos adaptativos que cambian de forma según el fabricante. Se enfocó en la seguridad con Google Play Protect y un arranque el doble de rápido. Fue una versión de refinamiento que hizo al sistema mucho más inteligente, ordenado y seguro para el usuario.' },
+    { id: 'v13', year: '2022', name: 'Android 13', img: 'v13.png', desc: 'Llevó la personalización de Material You al siguiente nivel, permitiendo que los iconos de terceros adopten el color del fondo de pantalla. Mejoró la privacidad permitiendo elegir qué fotos específicas compartir con cada app en lugar de toda la galería. Añadió soporte para audio Bluetooth LE de baja energía y una barra de tareas mejorada para tablets. Se centró en dar al usuario control total sobre sus datos y una estética impecable.' },
+    { id: 'v15', year: '2024', name: 'Android 15', img: 'v15r.png', desc: 'Enfocado en la seguridad avanzada y la inteligencia artificial integrada en el núcleo del sistema. Introduce el "Espacio Privado" para esconder apps sensibles bajo biometría y mejoras en la conectividad satelital nativa. Optimiza la multitarea en dispositivos plegables y ofrece una gestión de batería ultra eficiente que aprende de tus hábitos. Es la culminación de años de evolución, priorizando la privacidad absoluta y el rendimiento en hardware moderno.' }
+];
+
+const container = document.getElementById('timeline-content');
+
+// Crear los elementos en el HTML
+versions.forEach(v => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item';
+    item.onclick = () => openModal(v.id);
+    item.innerHTML = `
+        <div class="icon-box"><img src="${v.img}" alt="${v.name}"></div>
+        <div class="dot"></div>
+        <div class="year">${v.year}</div>
+    `;
+    container.appendChild(item);
+});
 
 function openModal(id) {
-    const data = androidDatabase[id];
-    const container = document.getElementById('modal-content');
-    
-    let listHtml = data.items.map(i => `<li>${i}</li>`).join('');
-
-    container.innerHTML = `
-        <h2 style="color: var(--android-green);">${data.title}</h2>
+    const data = versions.find(v => v.id === id);
+    document.getElementById('modal-content').innerHTML = `
+        <h2>${data.name} (${data.year})</h2>
         <p>${data.desc}</p>
-        <hr style="border: 0.5px solid #444; margin: 20px 0;">
-        <h4 style="margin-bottom: 10px;">🚀 Novedades importantes:</h4>
-        <ul style="line-height: 1.8;">${listHtml}</ul>
     `;
-
-    document.getElementById('modal-overlay').style.display = 'flex';
+    document.getElementById('overlay').style.display = 'flex';
 }
 
 function closeModal() {
-    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
 }
