@@ -8,8 +8,8 @@
 body {
     background-color: var(--dark-bg);
     background-image: 
-        linear-gradient(rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px),
-        linear-gradient(90deg, rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px);
+        linear-gradient(rgba(61,220,132,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61,220,132,0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     color: white;
     font-family: var(--font-pixel);
@@ -17,34 +17,37 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
+/* HEADER */
 .header {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px;
 }
 
-h1 { color: var(--android-green); font-size: 1.4rem; text-shadow: 3px 3px #000; }
+h1 {
+    color: var(--android-green);
+    font-size: 1.2rem;
+    text-shadow: 2px 2px #000;
+}
 
+/* TIMELINE */
 .timeline-wrapper {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
 
 .timeline-container {
     width: 100vw;
-    /* Scroll bar horizontal obligatorio */
-    overflow-x: scroll; 
+    overflow-x: auto; /* SCROLL HORIZONTAL */
     overflow-y: hidden;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
-/* --- DISEÑO DE LA BARRA DE SCROLL (MÁS SIMPLE) --- */
+/* SCROLL BAR BONITO */
 .timeline-container::-webkit-scrollbar {
-    height: 14px; 
+    height: 12px;
 }
 
 .timeline-container::-webkit-scrollbar-track {
@@ -53,84 +56,94 @@ h1 { color: var(--android-green); font-size: 1.4rem; text-shadow: 3px 3px #000; 
 
 .timeline-container::-webkit-scrollbar-thumb {
     background: var(--android-green);
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .timeline-container::-webkit-scrollbar-thumb:hover {
-    background: #fff;
+    background: white;
 }
 
+/* LINEA PRINCIPAL */
 .timeline-track {
     position: relative;
     width: max-content;
-    padding: 40px 80px;
+    padding: 20px 50px;
     display: flex;
     align-items: center;
-    height: 450px; /* Altura más compacta */
+    height: 260px; /* MÁS COMPACTO */
 }
 
 .main-line {
     position: absolute;
-    top: 50%; left: 0; right: 0;
-    height: 8px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 5px;
     background: var(--android-green);
-    box-shadow: 0 0 15px var(--android-green);
-    z-index: 1;
+    box-shadow: 0 0 10px var(--android-green);
     transform: translateY(-50%);
 }
 
-/* IMÁGENES MÁS PEQUEÑAS (180px) */
+/* ITEMS */
 .timeline-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 60px; /* Menos espacio para que quepan más versiones */
-    position: relative;
-    z-index: 2;
+    margin: 0 40px;
     cursor: pointer;
 }
 
+/* ICONOS MÁS PEQUEÑOS */
 .icon-box {
-    width: 180px;  /* Tamaño reducido como pediste */
-    height: 180px; 
+    width: 100px;   /* REDUCIDO */
+    height: 100px;
     background: var(--card-bg);
-    border: 4px solid var(--android-green);
+    border: 3px solid var(--android-green);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 8px 8px 0px #000;
+    box-shadow: 4px 4px 0px #000;
 }
 
-.icon-box img { 
-    width: 75%; 
-    height: auto; 
-    image-rendering: pixelated; 
+.icon-box img {
+    width: 80%;
+    image-rendering: pixelated;
 }
 
+/* PUNTO */
 .dot {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     background: white;
-    border: 5px solid var(--android-green);
-    margin: 15px 0;
+    border: 3px solid var(--android-green);
+    margin: 8px 0;
 }
 
-.year { 
-    color: var(--android-green); 
-    font-size: 0.9rem; 
+.year {
+    color: var(--android-green);
+    font-size: 0.7rem;
 }
 
 /* MODAL */
 .overlay {
-    display: none; position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
-    z-index: 1000; justify-content: center; align-items: center;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal {
     background: var(--card-bg);
-    padding: 30px;
-    border: 6px solid var(--android-green);
-    max-width: 650px; width: 90%;
-    box-shadow: 12px 12px 0 #000;
+    padding: 20px;
+    border: 4px solid var(--android-green);
+    max-width: 500px;
+    box-shadow: 8px 8px 0 #000;
+}
+
+.close-btn {
+    cursor: pointer;
+    color: red;
 }

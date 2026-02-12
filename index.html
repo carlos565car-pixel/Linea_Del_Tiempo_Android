@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android History | Ultra Wide</title>
+    <title>Android History Timeline</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="header">
-        <h1>ANDROID EVOLUTION</h1>
-    </div>
+<div class="header">
+    <h1>ANDROID EVOLUTION TIMELINE</h1>
+</div>
 
-    <div class="timeline-wrapper">
-        <div class="timeline-container">
-            <div class="timeline-track">
-                <div class="main-line"></div>
-                <div id="timeline-content" style="display: flex; align-items: center;"></div>
-            </div>
+<div class="timeline-wrapper">
+    <div class="timeline-container">
+        <div class="timeline-track">
+            <div class="main-line"></div>
+            <div id="timeline-content"></div>
         </div>
     </div>
+</div>
 
-    <div id="overlay" class="overlay" onclick="closeModal()">
-        <div class="modal" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeModal()">[X] CERRAR</span>
-            <div id="modal-content"></div>
-        </div>
+<div id="overlay" class="overlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal()">✖ CERRAR</span>
+        <div id="modal-content"></div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
