@@ -1,110 +1,170 @@
 :root {
     --android-green: #3ddc84;
-    --dark-bg: #0b0e11;
-    --card-bg: #1e2227;
+    --dark-bg: #06080a;
+    --card-bg: #161b22;
     --font-pixel: 'Press Start 2P', cursive;
 }
 
 body {
     background-color: var(--dark-bg);
+    /* FONDO MEJORADO: Cuadrícula tipo Matrix/Retro */
+    background-image: 
+        linear-gradient(rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(61, 220, 132, 0.05) 1.5px, transparent 1.5px);
+    background-size: 60px 60px;
     color: white;
     font-family: var(--font-pixel);
     margin: 0;
-    overflow: hidden; /* Evita scroll vertical */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .header {
     text-align: center;
     padding: 30px 0;
+    z-index: 10;
 }
 
-h1 { color: var(--android-green); font-size: 1.4rem; text-shadow: 3px 3px #000; }
+h1 { 
+    color: var(--android-green); 
+    font-size: 1.8rem; 
+    text-shadow: 5px 5px #000;
+    letter-spacing: 2px;
+}
 
-/* AJUSTE DEL SCROLL MÁS ARRIBA */
+/* CONTENEDOR DE SCROLL */
 .timeline-wrapper {
-    margin-top: 50px;
-    height: 450px; /* Limitamos la altura para que el scroll suba */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .timeline-container {
     width: 100vw;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 20px; /* Pegado a las viñetas */
+    padding-bottom: 40px; /* Aquí queda la barra pegada abajo de los años */
 }
 
-/* Diseño de la barra de scroll estilo Minecraft */
-.timeline-container::-webkit-scrollbar { height: 14px; }
+/* Barra de scroll estilo Minecraft ajustada */
+.timeline-container::-webkit-scrollbar { height: 16px; }
 .timeline-container::-webkit-scrollbar-track { background: #000; }
 .timeline-container::-webkit-scrollbar-thumb { 
     background: var(--android-green); 
-    border: 3px solid #000;
+    border: 4px solid #000;
 }
 
 .timeline-track {
     position: relative;
     width: max-content;
-    padding: 100px 50px;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    height: 500px;
 }
 
-.items-flex { display: flex; align-items: center; }
-
+/* LÍNEA VERDE CENTRAL MÁS GRUESA */
 .main-line {
     position: absolute;
-    top: 50%; left: 0; right: 0;
-    height: 8px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 12px;
     background: var(--android-green);
-    box-shadow: 0 0 15px var(--android-green);
+    box-shadow: 0 0 30px var(--android-green);
     z-index: 1;
     transform: translateY(-50%);
 }
 
+/* ITEMS GIGANTES */
 .timeline-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 40px;
+    margin: 0 120px; /* Espacio para que respiren las imágenes grandes */
     position: relative;
     z-index: 2;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.timeline-item:hover { transform: scale(1.1); }
+.timeline-item:hover { transform: scale(1.15) translateY(-10px); }
 
+/* CAJA DE ICONO GRANDE */
 .icon-box {
-    width: 80px; height: 80px;
+    width: 220px;
+    height: 220px;
     background: var(--card-bg);
-    border: 4px solid var(--android-green);
-    display: flex; align-items: center; justify-content: center;
+    border: 8px solid var(--android-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 12px 12px 0px #000;
 }
 
-.icon-box img { width: 70%; image-rendering: pixelated; }
+.icon-box img { 
+    width: 80%; 
+    height: auto; 
+    image-rendering: pixelated; 
+}
 
 .dot {
-    width: 18px; height: 18px;
+    width: 35px;
+    height: 35px;
     background: white;
-    border: 4px solid var(--android-green);
-    margin: 15px 0;
+    border: 8px solid var(--android-green);
+    margin: 30px 0;
+    box-shadow: 0 0 15px var(--android-green);
 }
 
-.year { color: var(--android-green); font-size: 0.7rem; }
+.year { 
+    color: var(--android-green); 
+    font-size: 1.1rem; 
+    background: #000;
+    padding: 5px 10px;
+}
 
-/* MODAL */
+/* MODAL / PESTAÑA DE INFORMACIÓN */
 .overlay {
-    display: none; position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
-    z-index: 1000; justify-content: center; align-items: center;
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0;
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.95);
+    z-index: 1000; 
+    justify-content: center; 
+    align-items: center;
 }
 
 .modal {
     background: var(--card-bg);
-    padding: 35px;
-    border: 6px solid var(--android-green);
-    max-width: 600px; width: 85%;
-    box-shadow: 8px 8px 0 #000;
+    padding: 50px;
+    border: 10px solid var(--android-green);
+    max-width: 800px; 
+    width: 85%;
+    box-shadow: 20px 20px 0 #000;
 }
 
-.modal h2 { color: var(--android-green); font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; }
-.modal p { line-height: 2; text-align: justify; font-size: 0.7rem; color: #ccc; }
-.close-btn { float: right; color: var(--android-green); cursor: pointer; font-size: 0.6rem; }
+.modal h2 { 
+    color: var(--android-green); 
+    font-size: 1.4rem; 
+    margin-bottom: 30px; 
+    text-transform: uppercase;
+}
+
+.modal p { 
+    line-height: 2.2; 
+    text-align: justify; 
+    font-size: 0.9rem; 
+    color: #eee; 
+}
+
+.close-btn { 
+    float: right; 
+    color: var(--android-green); 
+    cursor: pointer; 
+    font-size: 1rem; 
+}

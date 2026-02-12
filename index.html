@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronología Android Minecraft</title>
+    <title>Android History | Ultra Wide</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,21 +11,20 @@
 
     <div class="header">
         <h1>ANDROID EVOLUTION</h1>
-        <p>[ SISTEMA OPERATIVO DE GOOGLE ]</p>
     </div>
 
     <div class="timeline-wrapper">
-        <div class="timeline-container" id="scroll-container">
+        <div class="timeline-container">
             <div class="timeline-track">
                 <div class="main-line"></div>
-                <div id="timeline-content" class="items-flex"></div>
+                <div id="timeline-content" style="display: flex; align-items: center;"></div>
             </div>
         </div>
     </div>
 
     <div id="overlay" class="overlay" onclick="closeModal()">
         <div class="modal" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeModal()">[CERRAR X]</span>
+            <span class="close-btn" onclick="closeModal()">[X] CERRAR</span>
             <div id="modal-content"></div>
         </div>
     </div>
