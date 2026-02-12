@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android History Timeline</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Android Evolution Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="header">
@@ -17,17 +16,23 @@
 <div class="timeline-wrapper">
     <div class="timeline-container">
         <div class="timeline-track">
+
+            <!-- LINEA CENTRAL -->
             <div class="main-line"></div>
+
+            <!-- AQUI SE GENERAN LAS VERSIONES -->
             <div id="timeline-content"></div>
+
         </div>
     </div>
 </div>
 
 <!-- MODAL -->
-<div id="overlay" class="overlay" onclick="closeModal()">
-    <div class="modal" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="closeModal()">[X] CERRAR</span>
-        <div id="modal-content"></div>
+<div id="overlay" class="overlay">
+    <div class="modal">
+        <span class="close-btn" onclick="closeModal()">✖ CERRAR</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-content"></p>
     </div>
 </div>
 
