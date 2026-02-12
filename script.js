@@ -9,7 +9,7 @@ img: 'v1.png',
 desc: `
 Android 1.0 fue la primera versión pública del sistema operativo Android, lanzada con el HTC Dream.
 Incluía Google Maps, Gmail, Android Market (antecesor de Google Play) y un navegador web basado en WebKit.
-Permitía sincronizar contactos, calendario y correo con Google, marcando el inicio del ecosistema Android.
+Permitía sincronizar contactos, calendario y correo con Google, asi marcando el inicio del ecosistema Android.
 `
 },
 
