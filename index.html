@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Línea del Tiempo Dual</title>
+    <title>Timeline OS - Evolución Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="tabs-container">
-        <div class="tab active" onclick="switchTimeline('android')">
-            <img src="imagenes/v1.png" class="tab-icon"> Android
+    <div class="browser-tabs">
+        <div class="tab active" id="tab-android" onclick="switchTimeline('android')">
+            <img src="imagenes/v1.png" alt="Android"> 
+            <span>Android</span>
+            <div class="close-tab">×</div>
         </div>
-        <div class="tab" onclick="switchTimeline('ios')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/IPhone_logo_2024.svg" class="tab-icon"> iOS
+        <div class="tab" id="tab-ios" onclick="switchTimeline('ios')">
+            <div class="ios-tab-dot"></div> 
+            <span>iOS</span>
+            <div class="close-tab">×</div>
         </div>
-        <div class="tab-plus">+</div>
+        <div class="new-tab-btn">+</div>
     </div>
 
-    <h1 id="main-title">LÍNEA DEL TIEMPO ANDROID</h1>
+    <div class="content-wrapper">
+        <h1 id="main-title">LÍNEA DEL TIEMPO ANDROID</h1>
 
-    <div class="timeline-container">
-        <div class="line"></div>
-        <div id="timeline-content" class="timeline-items">
-            </div>
+        <div class="timeline-container">
+            <div class="line" id="main-line"></div>
+            <div id="timeline-content" class="timeline-items">
+                </div>
+        </div>
     </div>
 
     <div id="overlay" onclick="closeModal()">
         <div id="modal" onclick="event.stopPropagation()">
             <h2 id="modal-title"></h2>
             <div id="modal-content"></div>
-            <button class="close-btn" onclick="closeModal()">Cerrar</button>
+            <button class="close-btn-modal" id="modal-btn" onclick="closeModal()">Cerrar</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="android_data.js"></script>
+    <script src="ios_data.js"></script>
+    <script src="main_script.js"></script>
 </body>
 </html>
