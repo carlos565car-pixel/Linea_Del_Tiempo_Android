@@ -17,7 +17,7 @@ const versions = [
         desc: `Una actualización crítica que permitió a Android adaptarse a la explosión de nuevos dispositivos en el mercado.
         * **Resoluciones:** Introdujo el soporte para diversas densidades de pantalla, permitiendo teléfonos de todos los tamaños.
         * **Búsqueda Universal:** Unificó la búsqueda de contactos, archivos locales y resultados de la web en una sola barra.
-        * **Síntesis de Voz:** Añadió el motor multilingüe "Text-to-Speech" para que las aplicaciones pudieran hablar.`
+        * **Síntesis de Voz:** Añadio el motor multilingüe "Text-to-Speech" para que las aplicaciones pudieran hablar.`
     },
     {
         id: "v2_0",
