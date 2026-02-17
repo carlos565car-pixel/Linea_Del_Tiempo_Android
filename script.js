@@ -1,307 +1,307 @@
 const versions = [
     {
-        id: "android15",
-        name: "Android 1.5 Cupcake (2009)",
+        id: "android1_5",
+        name: "Android 1.5 Cupcake",
         year: "2009",
-        img: "imagenes/v15.png",
+        img: "imagenes/v15.png", // Corregido a v15 según tu carpeta
         desc: `
-        **El inicio de la era de los postres.** Cupcake fue la primera versión en utilizar un nombre en clave basado en dulces, una tradición que duraría una década. 
+        **El inicio de la tradición.** Cupcake fue la primera versión con nombre de postre, marcando un hito en la identidad de Google. 
         
         **Mejoras clave:**
-        * **Teclado Virtual:** Introdujo el primer teclado QWERTY en pantalla, permitiendo teléfonos sin teclados físicos.
-        * **Widgets:** Permitió que desarrolladores externos crearan widgets para la pantalla de inicio.
-        * **Multimedia:** Se añadió la capacidad de grabar y reproducir videos en formato MPEG-4 y 3GP.
-        * **Integración Web:** Permitió subir videos directamente a YouTube y fotos a Picasa.
-        * **Interfaz:** Incluyó transiciones animadas entre pantallas y la función de autorrotación.
+        * **Teclado Virtual:** Introdujo el primer teclado en pantalla para dispositivos sin teclas físicas.
+        * **Widgets:** Permitió colocar herramientas interactivas en el escritorio.
+        * **YouTube:** Integró la opción de subir videos directamente desde el móvil.
+        * **Copiar y Pegar:** Se añadió esta función esencial en el navegador web.
         `
     },
     {
-        id: "android16",
-        name: "Android 1.6 Donut (2009)",
+        id: "android1_6",
+        name: "Android 1.6 Donut",
         year: "2009",
-        img: "imagenes/v16.png",
+        img: "imagenes/v16.png", // Corregido a v16
         desc: `
-        **Expandiendo horizontes.** Donut fue fundamental porque permitió que Android se ejecutara en una variedad mucho mayor de hardware.
+        **Búsqueda universal.** Donut hizo que encontrar contenido fuera mucho más fácil y rápido.
         
         **Mejoras clave:**
-        * **Soporte de Pantalla:** Introdujo soporte para resoluciones WVGA, permitiendo pantallas más nítidas y de distintos tamaños.
-        * **Quick Search Box:** Un cuadro de búsqueda global que permitía buscar contactos, apps y contenido en la web desde la pantalla de inicio.
-        * **Android Market Renovado:** Se rediseñó la tienda de aplicaciones con un sistema de categorías y capturas de pantalla.
-        * **Síntesis de voz:** Introdujo el motor 'Text-to-Speech' para que las aplicaciones pudieran "hablar".
+        * **Cuadro de búsqueda:** Permitió buscar en la web y en el teléfono simultáneamente.
+        * **Soporte de pantalla:** Android empezó a adaptarse a diferentes tamaños y resoluciones.
+        * **Galería mejorada:** Se rediseñó la interfaz para ver fotos y videos.
+        * **Motor de voz:** Introdujo la síntesis de voz (Text-to-speech).
         `
     },
     {
-        id: "android20",
-        name: "Android 2.0/2.1 Eclair (2009)",
+        id: "android2_0",
+        name: "Android 2.0 Eclair",
         year: "2009",
-        img: "imagenes/v20.png",
+        img: "imagenes/v20.png", // Corregido a v20
         desc: `
-        **El salto a la madurez.** Lanzado con el icónico Motorola Droid, Eclair transformó a Android en un competidor serio para el iPhone.
+        **Navegación inteligente.** Esta versión trajo el GPS gratuito a las masas a través de Google Maps.
         
         **Mejoras clave:**
-        * **Google Maps Navigation:** Introdujo navegación GPS paso a paso gratuita con vistas 3D y guía de voz.
-        * **Multicuenta:** Soporte nativo para varias cuentas de Google y Microsoft Exchange por primera vez.
-        * **Cámara:** Se añadieron funciones de flash, zoom digital, modo de escena, balance de blancos y efectos de color.
-        * **Fondos animados:** Introdujo los 'Live Wallpapers', permitiendo que el fondo de pantalla reaccionara al tacto.
+        * **Google Maps Navigation:** Navegación paso a paso con guía de voz gratuita.
+        * **Multicuenta:** Soporte para varias cuentas de Google en un solo equipo.
+        * **Bluetooth 2.1:** Mejoras significativas en la transferencia de datos inalámbrica.
+        * **Cámara:** Soporte para flash, zoom digital y efectos de color.
         `
     },
     {
-        id: "android22",
-        name: "Android 2.2 Froyo (2010)",
+        id: "android2_2",
+        name: "Android 2.2 Froyo",
         year: "2010",
-        img: "imagenes/v22.png",
+        img: "imagenes/v22.png", // Corregido a v22
         desc: `
-        **Velocidad pura.** 'Frozen Yogurt' se enfocó en optimizar el motor del sistema para hacerlo mucho más rápido que las versiones anteriores.
+        **Velocidad máxima.** Froyo se centró en optimizar el rendimiento del procesador.
         
         **Mejoras clave:**
-        * **Compilador JIT:** Mejoró la velocidad de procesamiento de las apps entre 2 y 5 veces.
-        * **Wi-Fi Hotspot:** Permitió convertir el teléfono en un módem inalámbrico para compartir internet con otros dispositivos.
-        * **Adobe Flash:** Soporte completo para contenido Flash en el navegador web.
-        * **Actualización del Market:** Permitió las actualizaciones automáticas de aplicaciones.
+        * **Hotspot Wi-Fi:** Permitió compartir el internet del celular con otros equipos.
+        * **Compilador JIT:** Hizo que las aplicaciones fueran hasta 5 veces más rápidas.
+        * **Adobe Flash:** Soporte para ver videos y juegos flash en el navegador.
+        * **Notificaciones Push:** Permitió a las apps enviar alertas en tiempo real.
         `
     },
     {
-        id: "android23",
-        name: "Android 2.3 Gingerbread (2010)",
+        id: "android2_3",
+        name: "Android 2.3 Gingerbread",
         year: "2010",
-        img: "imagenes/v23.png",
+        img: "imagenes/v23.png", // Corregido a v23
         desc: `
-        **Refinamiento y Gaming.** Gingerbread es recordado por su estabilidad y por ser la versión que dominó el mercado durante años.
+        **Dominio del mercado.** Gingerbread fue la versión más utilizada durante años debido a su estabilidad.
         
         **Mejoras clave:**
-        * **Interfaz Oscura:** Se rediseñó la barra de estado y los menús con tonos negros y verdes para ahorrar batería.
-        * **Soporte NFC:** Introdujo la tecnología de comunicación de campo cercano para futuros pagos móviles.
-        * **Gestión de Batería:** Un nuevo administrador que mostraba exactamente qué app estaba consumiendo más energía.
-        * **Cámara Frontal:** Soporte oficial para cámaras múltiples, impulsando las videollamadas.
+        * **Soporte NFC:** Introdujo la tecnología para futuros pagos sin contacto.
+        * **Sensor de Giroscopio:** Mejoró drásticamente la experiencia en juegos.
+        * **Gestión de Energía:** Un menú detallado para ver qué app gastaba más batería.
+        * **Cámara Frontal:** Soporte nativo para videollamadas.
         `
     },
     {
-        id: "android30",
-        name: "Android 3.0 Honeycomb (2011)",
+        id: "android3_0",
+        name: "Android 3.0 Honeycomb",
         year: "2011",
-        img: "imagenes/v30.png",
+        img: "imagenes/v30.png", // Corregido a v30
         desc: `
-        **La era de las Tablets.** Fue una versión exclusiva para pantallas grandes, rompiendo con el diseño tradicional de los teléfonos.
+        **Pensado para Tablets.** Una versión exclusiva para pantallas grandes con diseño futurista.
         
         **Mejoras clave:**
-        * **Interfaz Holográfica:** Un diseño futurista en azul neón llamado 'Holo'.
-        * **Botones Virtuales:** Eliminó la necesidad de botones físicos (Atrás, Inicio, Menú) integrándolos en la pantalla.
-        * **Barra de Acción:** Introdujo un menú superior dentro de las apps para controlar funciones comunes.
-        * **Multitarea Visual:** Una lista con miniaturas de las aplicaciones abiertas recientemente.
+        * **Interfaz Holo:** Un diseño azul neón que eliminó los botones físicos por virtuales.
+        * **Multitarea Visual:** Una lista con miniaturas de las apps abiertas recientemente.
+        * **Barra de Acción:** Menús contextuales dentro de las aplicaciones.
+        * **Aceleración por Hardware:** Gráficos mucho más fluidos.
         `
     },
     {
-        id: "android40",
-        name: "Android 4.0 Ice Cream Sandwich (2011)",
+        id: "android4_0",
+        name: "Android 4.0 Ice Cream Sandwich",
         year: "2011",
-        img: "imagenes/v40.png",
+        img: "imagenes/v40.png", // Corregido a v40
         desc: `
-        **La gran unificación.** Juntó lo mejor de los teléfonos y las tablets en un solo sistema operativo moderno y cohesivo.
+        **La Gran Unificación.** Juntó el sistema de tablets y teléfonos en uno solo.
         
         **Mejoras clave:**
-        * **Tipografía Roboto:** Una nueva fuente diseñada específicamente para pantallas de alta resolución.
-        * **Face Unlock:** El primer sistema nativo de reconocimiento facial para desbloquear el dispositivo.
-        * **Control de Datos:** Herramientas integradas para poner límites al consumo de datos móviles.
-        * **Carpetas:** La capacidad de arrastrar una app sobre otra para organizar el escritorio fácilmente.
+        * **Face Unlock:** Desbloqueo mediante reconocimiento facial por primera vez.
+        * **Carpetas:** Organización de apps arrastrando iconos unos sobre otros.
+        * **Uso de Datos:** Herramienta nativa para limitar el consumo de internet.
+        * **Roboto:** Introducción de la nueva fuente tipográfica oficial.
         `
     },
     {
-        id: "android41",
-        name: "Android 4.1 Jelly Bean (2012)",
+        id: "android4_1",
+        name: "Android 4.1 Jelly Bean",
         year: "2012",
-        img: "imagenes/v41.png",
+        img: "imagenes/v41.png", // Corregido a v41
         desc: `
-        **Suavidad extrema.** Esta versión se centró en la respuesta táctil y la fluidez de la interfaz de usuario.
+        **Project Butter.** El objetivo principal fue eliminar el "lag" de la interfaz.
         
         **Mejoras clave:**
-        * **Project Butter:** Una tecnología que sincronizaba los gráficos para eliminar el lag y hacer que el sistema corriera a 60 FPS.
-        * **Google Now:** Un asistente que mostraba "tarjetas" con información relevante (clima, tráfico) antes de que la pidieras.
-        * **Notificaciones Expandibles:** Podías ver fotos o responder mensajes directamente desde la barra de notificaciones sin abrir la app.
+        * **60 FPS:** Una interfaz extremadamente suave y fluida al tacto.
+        * **Google Now:** Tarjetas inteligentes con información predictiva (clima, tráfico).
+        * **Notificaciones Expandibles:** Interactuar con alertas sin abrir la app.
+        * **Dictado por voz offline:** Reconocimiento de voz sin necesidad de internet.
         `
     },
     {
-        id: "android44",
-        name: "Android 4.4 KitKat (2013)",
+        id: "android4_4",
+        name: "Android 4.4 KitKat",
         year: "2013",
-        img: "imagenes/v44.png",
+        img: "imagenes/v44.png", // Corregido a v44
         desc: `
-        **Eficiencia para todos.** KitKat fue diseñado para ser tan ligero que pudiera correr en teléfonos de gama baja con solo 512 MB de RAM.
+        **Eficiencia total.** Diseñado para funcionar incluso en equipos muy básicos.
         
         **Mejoras clave:**
-        * **Modo Inmersivo:** Las barras de navegación y estado se ocultaban automáticamente al leer o jugar.
-        * **Project Svelte:** Reducción drástica del uso de memoria del sistema operativo.
-        * **OK Google:** Activación del asistente de voz desde la pantalla de inicio por primera vez.
-        * **Emojis:** Integración nativa de emojis coloridos en el teclado de Google.
+        * **Modo Inmersivo:** Las barras de sistema se ocultan para dar más espacio a las apps.
+        * **OK Google:** Activación por voz desde la pantalla de inicio.
+        * **Project Svelte:** Optimización del sistema para usar solo 512MB de RAM.
+        * **Cloud Printing:** Soporte nativo para imprimir documentos por Wi-Fi.
         `
     },
     {
-        id: "android50",
-        name: "Android 5.0 Lollipop (2014)",
+        id: "android5_0",
+        name: "Android 5.0 Lollipop",
         year: "2014",
-        img: "imagenes/v50.png",
+        img: "imagenes/v50.png", // Corregido a v50
         desc: `
-        **Material Design.** Lollipop trajo el cambio visual más radical en la historia de Android, basado en sombras, capas y colores vibrantes.
+        **Material Design.** El cambio estético más importante con sombras y capas físicas.
         
         **Mejoras clave:**
-        * **Runtime ART:** Reemplazó a Dalvik, permitiendo que las apps se abrieran mucho más rápido.
-        * **Notificaciones en Bloqueo:** Las notificaciones aparecieron finalmente en la pantalla de bloqueo.
-        * **Arquitectura de 64 bits:** Soporte para los procesadores móviles más potentes del momento.
-        * **Smart Lock:** Desbloqueo automático cuando el teléfono está cerca de un dispositivo Bluetooth de confianza.
+        * **Diseño Plano:** Colores vivos y animaciones basadas en la física.
+        * **Notificaciones en Bloqueo:** Ver alertas sin desbloquear el equipo.
+        * **ART Runtime:** Reemplazó a Dalvik para abrir apps mucho más rápido.
+        * **Multiusuario:** Permitió crear perfiles para diferentes personas en un teléfono.
         `
     },
     {
-        id: "android60",
-        name: "Android 6.0 Marshmallow (2015)",
+        id: "android6_0",
+        name: "Android 6.0 Marshmallow",
         year: "2015",
-        img: "imagenes/v60.png",
+        img: "imagenes/v60.png", // Corregido a v60
         desc: `
-        **Control y Seguridad.** Marshmallow no cambió mucho visualmente, pero mejoró profundamente el funcionamiento interno.
+        **Control de Privacidad.** Se enfocó en dar más poder al usuario sobre sus datos.
         
         **Mejoras clave:**
-        * **Permisos Granulares:** Las apps empezaron a pedir permiso (cámara, micro) justo cuando necesitaban usarlo, no al instalarse.
-        * **Modo Doze:** Hibernación profunda del teléfono cuando está en reposo para ahorrar batería significativamente.
-        * **Google Now on Tap:** Buscaba información basada en lo que estabas viendo en pantalla en ese momento.
-        * **USB-C:** Soporte nativo para carga rápida y transferencia de datos mediante el nuevo estándar.
+        * **Permisos Individuales:** Elegir qué puede usar cada app (cámara, micro, etc.).
+        * **Modo Doze:** Ahorro de batería extremo cuando el móvil está quieto.
+        * **Lector de Huellas:** Soporte oficial para seguridad biométrica.
+        * **USB-C:** Soporte nativo para el nuevo estándar de carga rápida.
         `
     },
     {
-        id: "android70",
-        name: "Android 7.0 Nougat (2016)",
+        id: "android7_0",
+        name: "Android 7.0 Nougat",
         year: "2016",
-        img: "imagenes/v70.png",
+        img: "imagenes/v70.png", // Corregido a v70
         desc: `
-        **Productividad total.** Nougat se enfocó en permitir que los usuarios hicieran más cosas al mismo tiempo.
+        **Productividad Elevada.** Introdujo funciones para hacer más en menos tiempo.
         
         **Mejoras clave:**
-        * **Multi-ventana:** Soporte nativo para usar dos aplicaciones al mismo tiempo en pantalla dividida.
-        * **Vulkan API:** Un nuevo motor gráfico que permitió juegos con calidad casi de consola.
-        * **Actualizaciones en segundo plano:** El sistema podía descargar e instalar actualizaciones sin interrumpir al usuario.
-        * **Respuesta Rápida:** Responder mensajes directamente desde la burbuja de notificación.
+        * **Pantalla Dividida:** Usar dos aplicaciones al mismo tiempo en pantalla.
+        * **Vulkan:** Gráficos 3D de alta calidad para juegos pesados.
+        * **Respuesta Rápida:** Escribir en chats directamente desde la notificación.
+        * **Daydream:** Soporte nativo para Realidad Virtual.
         `
     },
     {
-        id: "android80",
-        name: "Android 8.0 Oreo (2017)",
+        id: "android8_0",
+        name: "Android 8.0 Oreo",
         year: "2017",
-        img: "imagenes/v80.png",
+        img: "imagenes/v80.png", // Corregido a v80
         desc: `
-        **Más inteligente y veloz.** Oreo optimizó los tiempos de carga y la gestión de procesos invisibles para el usuario.
+        **Experiencia Fluida.** Se centró en la multitarea y la facilidad de uso.
         
         **Mejoras clave:**
-        * **Picture-in-Picture (PiP):** Ver un video en una ventana flotante mientras usas otra aplicación.
-        * **Puntos de Notificación:** Pequeños círculos sobre los iconos de las apps que indicaban notificaciones pendientes.
-        * **Project Treble:** Una arquitectura nueva que permitía a los fabricantes actualizar Android mucho más rápido.
-        * **Google Play Protect:** Escaneo de seguridad integrado para detectar apps maliciosas en tiempo real.
+        * **Picture-in-Picture:** Ver videos en una ventanita mientras haces otra cosa.
+        * **Project Treble:** Cambió la estructura de Android para actualizaciones más rápidas.
+        * **Autocompletar:** El sistema recuerda contraseñas de apps automáticamente.
+        * **Iconos Adaptativos:** Iconos que cambian de forma según el tema.
         `
     },
     {
-        id: "android90",
-        name: "Android 9 Pie (2018)",
+        id: "android9_0",
+        name: "Android 9 Pie",
         year: "2018",
-        img: "imagenes/v90.png",
+        img: "imagenes/v90.png", // Corregido a v90
         desc: `
-        **Inteligencia Artificial.** Pie utilizó el aprendizaje automático para adaptarse a la forma en que cada persona usa su teléfono.
+        **Inteligencia Artificial.** El sistema empezó a aprender de tus hábitos.
         
         **Mejoras clave:**
-        * **Batería Adaptativa:** Prioriza la energía para las apps que más usas y la quita de las que no.
-        * **Navegación por Gestos:** Eliminó los tres botones clásicos por una "píldora" central táctil.
-        * **Bienestar Digital:** Un panel para ver cuánto tiempo pasas en cada app y poner límites de uso.
-        * **Brillo Adaptativo:** Ajusta el brillo basándose en tus preferencias personales y no solo en la luz ambiental.
+        * **Batería Adaptativa:** Prioriza la energía para las apps que más usas.
+        * **Navegación por gestos:** Introdujo la barra horizontal para navegar.
+        * **Bienestar Digital:** Herramientas para controlar el tiempo que pasas al celular.
+        * **Brillo Inteligente:** Ajusta la luz de la pantalla según tus gustos personales.
         `
     },
     {
         id: "android10",
-        name: "Android 10 (2019)",
+        name: "Android 10",
         year: "2019",
-        img: "imagenes/v10.png",
+        img: "imagenes/v10.png", // Corregido a v10
         desc: `
-        **Adiós a los dulces.** Google decidió profesionalizar la marca usando solo números. Fue la versión que abrazó el cambio de forma de los teléfonos.
+        **Privacidad y Oscuridad.** Eliminó los nombres de postres y trajo el modo oscuro.
         
         **Mejoras clave:**
-        * **Modo Oscuro Integral:** Un tema oscuro que afectaba a todo el sistema y a las aplicaciones compatibles.
-        * **Nuevos Gestos:** Eliminación total de botones, usando deslizamientos desde los bordes para navegar.
-        * **Live Caption:** Subtítulos generados por IA en tiempo real para cualquier video o audio que se reproduzca.
-        * **Soporte Plegable:** Optimización para los primeros teléfonos con pantallas que se doblan.
+        * **Modo Oscuro:** Tema negro para todo el sistema y aplicaciones.
+        * **Privacidad de Ubicación:** Controlar si una app te rastrea "solo si está abierta".
+        * **Live Caption:** Genera subtítulos automáticos para cualquier video o audio.
+        * **Soporte Plegable:** Adaptación para los nuevos teléfonos que se doblan.
         `
     },
     {
         id: "android11",
-        name: "Android 11 (2020)",
+        name: "Android 11",
         year: "2020",
-        img: "imagenes/v11.png",
+        img: "imagenes/v11.png", // Corregido a v11
         desc: `
-        **Centrado en las Personas.** Android 11 se enfocó en organizar las conversaciones y los dispositivos inteligentes.
+        **Comunicación primero.** Organizó todas las charlas en un solo lugar.
         
         **Mejoras clave:**
-        * **Burbujas de Chat:** Ventanas flotantes para conversaciones (estilo Messenger) para cualquier app de mensajería.
-        * **Control de Dispositivos:** Un nuevo menú al mantener el botón de encendido para controlar luces y termostatos.
-        * **Permisos Únicos:** Posibilidad de dar permiso a una app para usar el micro o cámara "solo esta vez".
-        * **Grabación de Pantalla:** Por fin incluyó una herramienta nativa para grabar lo que pasa en el móvil con audio.
+        * **Burbujas de Chat:** Conversaciones flotantes sobre cualquier aplicación.
+        * **Grabación de Pantalla:** Herramienta nativa para grabar video del celular.
+        * **Control de Hogar:** Acceso rápido a luces y dispositivos inteligentes.
+        * **Permisos Temporales:** Dar permiso a una app "solo por esta vez".
         `
     },
     {
         id: "android12",
-        name: "Android 12 (2021)",
+        name: "Android 12",
         year: "2021",
-        img: "imagenes/v12.png",
+        img: "imagenes/v12.png", // Corregido a v12
         desc: `
-        **Material You.** La mayor revolución de diseño desde Lollipop. El sistema ahora es capaz de extraer colores de tu fondo de pantalla.
+        **Material You.** El sistema cambia de color según tu fondo de pantalla.
         
         **Mejoras clave:**
-        * **Personalización Dinámica:** Todo el sistema (botones, menús, widgets) cambia de color según tu wallpaper.
-        * **Panel de Privacidad:** Un historial detallado de qué apps accedieron a tu ubicación o cámara en las últimas 24h.
-        * **Indicadores de Privacidad:** Un punto verde en la esquina avisa si el micrófono o la cámara están activos.
-        * **Scroll Screenshots:** Capturas de pantalla largas que permiten capturar toda una página web.
+        * **Personalización dinámica:** Colores automáticos en todo el sistema.
+        * **Panel de Privacidad:** Historial de qué apps usaron tu cámara o micro.
+        * **Indicadores:** Un punto verde avisa si la cámara está encendida.
+        * **Captura de Scroll:** Tomar fotos de páginas web completas hacia abajo.
         `
     },
     {
         id: "android13",
-        name: "Android 13 (2022)",
+        name: "Android 13",
         year: "2022",
-        img: "imagenes/v13.png",
+        img: "imagenes/v13.png", // Corregido a v13
         desc: `
-        **Refinamiento y Audio.** No buscó cambiar el diseño, sino pulir la experiencia del usuario y la conectividad.
+        **Refinamiento y Seguridad.** Mejoras en la privacidad de las fotos y el audio.
         
         **Mejoras clave:**
-        * **Idiomas por App:** Configurar el sistema en español pero una app específica (como Twitter) en inglés.
-        * **Bluetooth LE Audio:** Nuevo estándar para menor latencia y mayor calidad de sonido usando menos batería.
-        * **Permisos de Notificaciones:** Las apps ya no pueden enviarte notificaciones por defecto, deben pedir permiso primero.
-        * **Selector de Fotos:** Permite compartir solo fotos específicas con una app en lugar de darle acceso a toda tu galería.
+        * **Idiomas por app:** Poner Facebook en inglés y el sistema en español.
+        * **Bluetooth LE Audio:** Audio de alta calidad con muy bajo consumo.
+        * **Selector de Fotos:** Compartir fotos específicas sin dar acceso a toda la galería.
+        * **Permiso de Notificación:** Las apps deben preguntar antes de enviarte alertas.
         `
     },
     {
         id: "android14",
-        name: "Android 14 (2023)",
+        name: "Android 14",
         year: "2023",
-        img: "imagenes/v14.png",
+        img: "imagenes/v14.png", // Corregido a v14
         desc: `
-        **Eficiencia y Pantallas Grandes.** Enfocado en optimizar el rendimiento y la personalización de la pantalla de bloqueo.
+        **Eficiencia y Accesibilidad.** Enfocado en mejorar la vida útil de la batería.
         
         **Mejoras clave:**
-        * **Personalización de Reloj:** Nuevos estilos de reloj y accesos directos personalizables en la pantalla de bloqueo.
-        * **Ultra HDR:** Soporte para capturar y mostrar fotos con colores mucho más vibrantes y mayor rango dinámico.
-        * **Health Connect:** Un centro integrado para gestionar todos los datos de salud de distintas apps de forma segura.
-        * **Fuentes Grandes:** Mejor escalado de texto hasta un 200% para mejorar la accesibilidad.
+        * **Ultra HDR:** Fotos con colores mucho más reales y brillantes.
+        * **Fuentes Gigantes:** Mejor escalado de texto para personas con problemas visuales.
+        * **Health Connect:** Gestión unificada de datos de salud y ejercicio.
+        * **Batería Optimizada:** Mejor gestión de procesos en segundo plano.
         `
     },
     {
         id: "android15",
-        name: "Android 15 (2024/2025)",
+        name: "Android 15",
         year: "2025",
-        img: "imagenes/v15r.png",
+        img: "imagenes/v15r.png", // Corregido a v15r según tu carpeta
         desc: `
-        **Seguridad y Productividad de Nueva Generación.** Se enfoca en la protección contra robos y la inteligencia artificial integrada.
+        **Seguridad Inteligente.** La versión más avanzada con protección contra robos.
         
         **Mejoras clave:**
-        * **Espacio Privado:** Una caja fuerte digital para esconder apps sensibles (bancos, citas) que requiere autenticación extra.
-        * **Detección de Robo:** Usa IA y sensores para detectar si alguien te arrebata el móvil y bloquearlo instantáneamente.
-        * **Multitarea en Plegables:** Permite guardar combinaciones de apps en pantalla dividida para abrirlas con un toque.
-        * **Mensajería Satelital:** Soporte nativo para enviar mensajes de emergencia sin cobertura celular.
+        * **Espacio Privado:** Una zona oculta para apps bancarias o personales.
+        * **Bloqueo por Robo:** La IA detecta si alguien te arrebata el móvil y lo bloquea.
+        * **Conexión Satelital:** Mensajes de emergencia sin señal celular.
+        * **IA Integrada:** Mejoras drásticas en el asistente Gemini nativo.
         `
     }
 ];
 
-// ===== RENDERIZADO DE LA LÍNEA DEL TIEMPO =====
+// ===== RENDERIZADO =====
 const container = document.getElementById("timeline-content");
 
 versions.forEach(v => {
@@ -318,20 +318,20 @@ versions.forEach(v => {
     container.appendChild(item);
 });
 
-// ===== FUNCIONES DEL MODAL =====
+// ===== MODAL =====
 function openModal(id) {
     const v = versions.find(x => x.id === id);
 
-    // Formatear el texto para convertir los puntos de viñeta en una lista HTML
+    // Formatear texto para el modal (convierte * en <li>)
     const formattedDesc = v.desc
         .replace(/\n/g, '<br>')
         .replace(/\* \*\*(.*?)\*\*/g, '<li><strong>$1</strong>')
         .replace(/\*\*/g, '');
 
+    document.getElementById("modal-title").innerText = v.name;
     document.getElementById("modal-content").innerHTML = `
-        <img src="${v.img}" style="width: 70px; margin-bottom: 10px;">
-        <h2 style="color: #a4c639; margin-bottom: 5px;">${v.name}</h2>
-        <div style="text-align: left; font-size: 0.95rem; color: #eee;">
+        <img src="${v.img}" style="width: 80px; display: block; margin: 0 auto 20px;">
+        <div style="text-align: left; font-family: sans-serif; line-height: 1.6;">
             ${formattedDesc}
         </div>
     `;
@@ -341,4 +341,12 @@ function openModal(id) {
 
 function closeModal() {
     document.getElementById("overlay").style.display = "none";
+}
+
+// Cerrar al hacer clic fuera del modal
+window.onclick = function(event) {
+    const overlay = document.getElementById("overlay");
+    if (event.target == overlay) {
+        closeModal();
+    }
 }
