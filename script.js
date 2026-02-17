@@ -236,3 +236,76 @@ function closeModal() {
 window.onclick = function(e) {
     if (e.target == document.getElementById("overlay")) closeModal();
 };
+
+// Base de datos de Android (Tu info reducida anterior)
+const androidData = [
+    { id: "v15", name: "Android 15", year: "2024", img: "imagenes/v15.png", desc: "Enfocado en la privacidad y eficiencia del sistema. * **Private Space:** Permite ocultar apps sensibles tras una capa extra. * **Detección de Robo:** Bloqueo inteligente si el teléfono es arrebatado. * **Mensajería Satelital:** Conexión de emergencia sin cobertura móvil." },
+    { id: "v16", name: "Android 16", year: "2025", img: "imagenes/v16.png", desc: "Introducción de la IA generativa en el núcleo del sistema. * **IA Proactiva:** El asistente predice acciones según el contexto diario. * **Dashboard:** Nuevo panel de control de recursos más visual. * **Mejoras:** Mayor fluidez en dispositivos plegables." },
+    { id: "v17", name: "Android 17", year: "2026", img: "imagenes/v12.png", desc: "Integración total con dispositivos vestibles y domótica. * **Conectividad:** Sincronización instantánea con cualquier gadget. * **Salud:** Sensores de monitoreo en tiempo real avanzados. * **Diseño:** Evolución de Material You con texturas táctiles." },
+    { id: "v18", name: "Android 18", year: "2027", img: "imagenes/v13.png", desc: "Enfoque en la sostenibilidad y computación en la nube. * **Cloud OS:** Ejecución de procesos pesados en servidores remotos. * **Eco-Mode:** Reducción drástica del consumo energético. * **Privacidad:** Cifrado cuántico para todos los datos del usuario." },
+    { id: "v26", name: "Android 26", year: "2035", img: "imagenes/v14.png", desc: "El futuro de la interacción humano-máquina. * **Interfaz Neural:** Soporte nativo para interfaces cerebro-computadora. * **Realidad:** Integración invisible con gafas de realidad aumentada. * **IA Sentiente:** Personalidad virtual altamente avanzada." }
+];
+
+// Base de datos de iOS (NUEVA)
+const iosData = [
+    { id: "ios15", name: "iOS 15", year: "2021", img: "https://upload.wikimedia.org/wikipedia/commons/d/d1/IOS_15_logo.png", desc: "Mejoras en la conexión y enfoque personal. * **FaceTime:** Introducción de SharePlay y aislamiento de voz. * **Modos de Concentración:** Filtros de notificaciones según actividad. * **Live Text:** Reconocimiento de texto en fotos en tiempo real." },
+    { id: "ios16", name: "iOS 16", year: "2022", img: "https://upload.wikimedia.org/wikipedia/commons/3/30/IOS_16_logo.png", desc: "Reinvención de la pantalla de bloqueo. * **Personalización:** Fondos de pantalla dinámicos y widgets en el bloqueo. * **Mensajes:** Capacidad de editar y cancelar envíos. * **Dictado:** Sistema híbrido voz-teclado simultáneo." },
+    { id: "ios17", name: "iOS 17", year: "2023", img: "https://upload.wikimedia.org/wikipedia/commons/d/d6/IOS_17_logo.svg", desc: "Mejoras en la comunicación básica del día a día. * **Contact Posters:** Pósters personalizados para llamadas. * **StandBy:** Nuevo modo para usar el iPhone como reloj de mesa. * **Check In:** Notificaciones automáticas de seguridad al llegar a casa." },
+    { id: "ios18", name: "iOS 18", year: "2024", img: "https://upload.wikimedia.org/wikipedia/commons/c/c9/IOS_18_logo.png", desc: "La era de Apple Intelligence. * **Apple Intelligence:** IA integrada para redacción y edición de fotos. * **Personalización:** Iconos con colores libres y centro de control rediseñado. * **Siri:** Interacciones más naturales y contextuales." },
+    { id: "ios26", name: "iOS 26", year: "2032", img: "https://upload.wikimedia.org/wikipedia/commons/6/64/IPhone_logo_2024.svg", desc: "Proyección futurista del ecosistema Apple. * **Vision OS Link:** Integración total con hardware de realidad espacial. * **Biometría:** Escaneo de salud preventivo en tiempo real. * **IA Autónoma:** Gestión inteligente total de la vida digital." }
+];
+
+let currentTimeline = 'android';
+
+// Función para cambiar entre pestañas
+function switchTimeline(type) {
+    currentTimeline = type;
+    
+    // Actualizar visual de pestañas
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    
+    // Cambiar Título
+    document.getElementById('main-title').innerText = `LÍNEA DEL TIEMPO ${type.toUpperCase()}`;
+    
+    // Renderizar datos correspondientes
+    renderTimeline(type === 'android' ? androidData : iosData);
+}
+
+// Función para renderizar la línea del tiempo
+function renderTimeline(data) {
+    const container = document.getElementById("timeline-content");
+    container.innerHTML = ""; // Limpiar antes de llenar
+
+    data.forEach(v => {
+        const item = document.createElement("div");
+        item.className = "timeline-item";
+        item.onclick = () => openModal(v, data);
+        item.innerHTML = `
+            <div class="icon-box"><img src="${v.img}" alt="${v.name}"></div>
+            <div class="dot"></div>
+            <div class="year">${v.year}</div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+// Función del Modal
+function openModal(version, dataSet) {
+    const formattedDesc = version.desc.replace(/\n/g, '<br>').replace(/\* \*\*(.*?)\*\*/g, '<li><strong>$1</strong>');
+    
+    document.getElementById("modal-title").innerText = version.name;
+    document.getElementById("modal-content").innerHTML = `
+        <img src="${version.img}" style="width:70px; display:block; margin:0 auto 10px;">
+        <div style="font-size: 0.95rem;">${formattedDesc}</div>
+    `;
+    document.getElementById("overlay").style.display = "flex";
+    document.getElementById("modal-content").scrollTop = 0;
+}
+
+function closeModal() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+// Iniciar con Android
+renderTimeline(androidData);

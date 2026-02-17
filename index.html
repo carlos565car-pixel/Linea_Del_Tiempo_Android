@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Android Evolution Timeline</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea del Tiempo Dual</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="header">
-    <h1>ANDROID LINEA DEL TIEMPO</h1>
-</div>
+    <div class="tabs-container">
+        <div class="tab active" onclick="switchTimeline('android')">
+            <img src="imagenes/v1.png" class="tab-icon"> Android
+        </div>
+        <div class="tab" onclick="switchTimeline('ios')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/IPhone_logo_2024.svg" class="tab-icon"> iOS
+        </div>
+        <div class="tab-plus">+</div>
+    </div>
 
-<div class="timeline-wrapper">
+    <h1 id="main-title">LÍNEA DEL TIEMPO ANDROID</h1>
+
     <div class="timeline-container">
-        <div class="timeline-track">
+        <div class="line"></div>
+        <div id="timeline-content" class="timeline-items">
+            </div>
+    </div>
 
-            <!-- LINEA CENTRAL -->
-            <div class="main-line"></div>
-
-            <!-- AQUI SE GENERAN LAS VERSIONES -->
-            <div id="timeline-content"></div>
-
+    <div id="overlay" onclick="closeModal()">
+        <div id="modal" onclick="event.stopPropagation()">
+            <h2 id="modal-title"></h2>
+            <div id="modal-content"></div>
+            <button class="close-btn" onclick="closeModal()">Cerrar</button>
         </div>
     </div>
-</div>
 
-<!-- MODAL -->
-<div id="overlay" class="overlay">
-    <div class="modal">
-        <span class="close-btn" onclick="closeModal()">✖ CERRAR</span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-content"></p>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

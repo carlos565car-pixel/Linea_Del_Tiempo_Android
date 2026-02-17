@@ -296,4 +296,54 @@ h1 {
 .close-btn:hover {
     background: #fff;
     transform: scale(1.05);
+}/* Estilos de Pestañas estilo Navegador */
+.tabs-container {
+    display: flex;
+    background: #202124;
+    padding: 8px 10px 0 10px;
+    gap: 5px;
+    border-bottom: 1px solid #3c4043;
+}
+
+.tab {
+    background: #35363a;
+    color: #9aa0a6;
+    padding: 10px 25px;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+    min-width: 120px;
+}
+
+.tab.active {
+    background: #111; /* Color de tu fondo actual */
+    color: #00ff88;
+    border-bottom: 2px solid #00ff88;
+}
+
+.tab:hover:not(.active) {
+    background: #3c4043;
+    color: white;
+}
+
+.tab-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.tab-plus {
+    color: #9aa0a6;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Ajustes al contenedor principal para que no se pegue arriba */
+#main-title {
+    margin-top: 40px;
 }
