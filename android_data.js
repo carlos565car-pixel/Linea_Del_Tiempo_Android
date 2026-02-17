@@ -162,7 +162,7 @@ const androidData = [
     {
         id: "v26",
         name: "Android 26",
-        year: "2035",
+        year: "Actualidad y Futuro:",
         img: "imagenes/v14.png",
         desc: `Futuro neural y computación invisible.
         * **Enlace Cerebral:** Interfaz pensamiento-móvil de baja latencia.
