@@ -14,6 +14,9 @@ function switchTimeline(system) {
     line.style.background = color;
 
     renderTimeline(system === 'android' ? androidData : iosData);
+    
+    // Reiniciar el scroll al principio al cambiar de sistema
+    document.querySelector('.timeline-container').scrollLeft = 0;
 }
 
 function renderTimeline(data) {
@@ -30,7 +33,11 @@ function renderTimeline(data) {
             ? `<div class="icon-box" style="border-color: ${color}"><img src="${v.img}"></div>`
             : `<div class="icon-box ios-box" style="border-color: ${color}">${v.num}</div>`;
 
-        item.innerHTML = `${iconHtml}<div class="dot" style="background: ${color}"></div><div class="year" style="color: ${color}">${v.year}</div>`;
+        item.innerHTML = `
+            ${iconHtml}
+            <div class="dot" style="background: ${color}"></div>
+            <div class="year" style="color: ${color}">${v.year}</div>
+        `;
         container.appendChild(item);
     });
 }
@@ -38,10 +45,13 @@ function renderTimeline(data) {
 function openModal(version) {
     const color = currentSystem === 'android' ? '#3ddc84' : '#007aff';
     const formattedDesc = version.desc.replace(/\n/g, '<br>').replace(/\* \*\*(.*?)\*\*/g, '<li><strong>$1</strong>');
+    
     document.getElementById("modal-title").innerText = version.name;
     document.getElementById("modal-title").style.color = color;
+    
     const imgHtml = version.img ? `<img src="${version.img}" style="width:70px; display:block; margin:0 auto 15px;">` : '';
     document.getElementById("modal-content").innerHTML = `${imgHtml}<div>${formattedDesc}</div>`;
+    
     const btn = document.getElementById("modal-btn");
     btn.style.background = color;
     btn.style.color = currentSystem === 'android' ? 'black' : 'white';

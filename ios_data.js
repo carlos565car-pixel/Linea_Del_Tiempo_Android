@@ -4,49 +4,49 @@ const iosData = [
         name: "iOS 15",
         year: "2021",
         num: "15",
-        desc: `Un enfoque en la conexión y la recuperación de la concentración.
-        * **Focus Modes:** Filtros inteligentes que permiten configurar qué personas y apps pueden notificarte según si trabajas, duermes o descansas.
-        * **Live Text:** Uso de procesamiento en el dispositivo para reconocer texto en fotos y permitir copiarlo o traducirlo al instante.
-        * **SharePlay:** Integración en FaceTime para ver películas o escuchar música en perfecta sincronía con amigos durante una llamada.`
+        desc: `Conectividad y recuperación del enfoque personal.
+        * **Focus:** Filtros de notificaciones según tu actividad (trabajo, sueño).
+        * **FaceTime:** Introducción de SharePlay para ver videos en conjunto.
+        * **Live Text:** Reconocimiento y copia de texto directamente de fotos.`
     },
     {
         id: "ios16",
         name: "iOS 16",
         year: "2022",
         num: "16",
-        desc: `Reinvención de la personalización y la inteligencia visual.
-        * **Pantalla de Bloqueo:** Rediseño total que permitió múltiples capas en fondos de pantalla, widgets informativos y cambio de tipografías.
-        * **Visual Look Up:** Introdujo la capacidad de "separar" el sujeto de una foto de su fondo simplemente dejando presionado el dedo.
-        * **Mensajes Pro:** Se añadió la esperada función de editar mensajes enviados o deshacer el envío en los primeros minutos.`
+        desc: `Personalización extrema de la experiencia iPhone.
+        * **Lock Screen:** Rediseño total con widgets, fuentes y profundidad.
+        * **Visual Look Up:** Capacidad de separar sujetos de fotos del fondo.
+        * **Mensajes:** Opción de editar o deshacer mensajes ya enviados.`
     },
     {
         id: "ios17",
         name: "iOS 17",
         year: "2023",
         num: "17",
-        desc: `Haciendo la comunicación diaria más personal y expresiva.
-        * **Contact Posters:** Permitió a los usuarios diseñar su propia "tarjeta de presentación" que aparece en pantalla completa al llamar a otros.
-        * **StandBy Mode:** Una nueva interfaz horizontal que convierte el iPhone en un reloj de noche o marco de fotos inteligente mientras carga.
-        * **NameDrop:** Evolución de AirDrop para intercambia contactos simplemente acercando la parte superior de dos iPhones.`
+        desc: `Comunicación más expresiva e intuitiva.
+        * **StandBy:** Pantalla inteligente mientras el iPhone está cargando.
+        * **NameDrop:** Compartir contactos simplemente acercando dos iPhones.
+        * **Contact Posters:** Personalización de cómo apareces en llamadas de otros.`
     },
     {
         id: "ios18",
         name: "iOS 18",
         year: "2024",
         num: "18",
-        desc: `La integración masiva de la Inteligencia Artificial (Apple Intelligence).
-        * **IA Generativa:** Herramientas integradas para resumir correos largos, reescribir textos con diferentes tonos y eliminar objetos de fotos.
-        * **Personalización Libre:** Por primera vez, los iconos de las aplicaciones pueden colocarse en cualquier lugar de la rejilla y cambiar su color.
-        * **Siri con Contexto:** El asistente ahora comprende qué sucede en tu pantalla y puede ejecutar acciones dentro de las aplicaciones por ti.`
+        desc: `La era de Apple Intelligence (IA Generativa).
+        * **IA Integrada:** Herramientas para escribir, resumir y crear imágenes.
+        * **Siri:** Rediseño total con mayor comprensión del contexto en pantalla.
+        * **Personalización:** Libertad para colocar iconos y tintes de color.`
     },
     {
         id: "ios26",
         name: "iOS 26",
         year: "2032",
         num: "26",
-        desc: `El sistema operativo para el ecosistema de Realidad Expandida (XR).
-        * **Continuidad Espacial:** Las aplicaciones ya no viven en una pantalla, se proyectan como ventanas flotantes en tu entorno físico.
-        * **Biometría de Salud:** Monitoreo constante de niveles de glucosa y oxígeno mediante sensores integrados en la piel y el dispositivo.
-        * **Asistente Cognitivo:** Siri evoluciona a una entidad capaz de razonar y predecir problemas antes de que el usuario los note.`
+        desc: `Computación espacial y salud proactiva.
+        * **Vision Link:** Integración total con hardware de realidad aumentada.
+        * **Biometría:** Escaneo de salud preventivo constante en tiempo real.
+        * **IA Autónoma:** Gestión digital total sin intervención del usuario.`
     }
 ];
