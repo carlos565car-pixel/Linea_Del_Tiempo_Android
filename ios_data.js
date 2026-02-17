@@ -27,7 +27,7 @@ const iosData = [
         desc: `Haciendo la comunicación diaria más personal y expresiva.
         * **Contact Posters:** Permitió a los usuarios diseñar su propia "tarjeta de presentación" que aparece en pantalla completa al llamar a otros.
         * **StandBy Mode:** Una nueva interfaz horizontal que convierte el iPhone en un reloj de noche o marco de fotos inteligente mientras carga.
-        * **NameDrop:** Evolución de AirDrop para intercambiar contactos simplemente acercando la parte superior de dos iPhones.`
+        * **NameDrop:** Evolución de AirDrop para intercambia contactos simplemente acercando la parte superior de dos iPhones.`
     },
     {
         id: "ios18",
