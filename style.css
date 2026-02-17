@@ -92,3 +92,47 @@ body {
     border: none; padding: 12px 30px; border-radius: 12px;
     cursor: pointer; margin-top: 20px; font-weight: bold;
 }
+/* ... (manten el resto de tu CSS igual) ... */
+
+.timeline-container {
+    position: relative;
+    margin: 50px 0;
+    padding: 100px 0; /* Más espacio para que luzca mejor */
+    overflow-x: auto; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+}
+
+/* LA LÍNEA QUE ATRAVIESA TODO */
+.line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    z-index: 1;
+    /* Esto asegura que la línea mida lo mismo que el grupo de iconos */
+    width: 100%; 
+    min-width: max-content; 
+    transition: background 0.5s ease;
+}
+
+.timeline-items {
+    display: inline-flex;
+    gap: 130px; /* Espacio entre cada versión */
+    padding: 0 100px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Personalización de la barra de abajo para que no sea fea */
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+.timeline-container::-webkit-scrollbar-track {
+    background: #121212;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+    background: #3ddc84; /* Color verde de Android */
+    border-radius: 10px;
+}
