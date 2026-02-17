@@ -38,13 +38,10 @@ function renderTimeline(data) {
 function openModal(version) {
     const color = currentSystem === 'android' ? '#3ddc84' : '#007aff';
     const formattedDesc = version.desc.replace(/\n/g, '<br>').replace(/\* \*\*(.*?)\*\*/g, '<li><strong>$1</strong>');
-    
     document.getElementById("modal-title").innerText = version.name;
     document.getElementById("modal-title").style.color = color;
-    
     const imgHtml = version.img ? `<img src="${version.img}" style="width:70px; display:block; margin:0 auto 15px;">` : '';
     document.getElementById("modal-content").innerHTML = `${imgHtml}<div>${formattedDesc}</div>`;
-    
     const btn = document.getElementById("modal-btn");
     btn.style.background = color;
     btn.style.color = currentSystem === 'android' ? 'black' : 'white';
@@ -52,5 +49,6 @@ function openModal(version) {
 }
 
 function closeModal() { document.getElementById("overlay").style.display = "none"; }
+window.onclick = e => { if (e.target == document.getElementById("overlay")) closeModal(); }
 
 window.onload = () => switchTimeline('android');
